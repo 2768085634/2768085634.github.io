@@ -1,0 +1,1944 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>element-ui | Haog's blog</title><meta name="author" content="haog"><meta name="copyright" content="haog"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Layout布局通过基础的24分栏迅速便捷创建布局 基础布局通过 row 和 col 组件，并通过 col 组件的 span 属性我们就可以自由地组合布局。 1234567891011&lt;el-row&gt;    &lt;el-col :span&#x3D;&quot;4&quot;&gt;  宽度为 4&#x2F;24    &lt;div class&#x3D;&quot;grid-content bg-purple">
+<meta property="og:type" content="article">
+<meta property="og:title" content="element-ui">
+<meta property="og:url" content="https://2768085634.github.io/2022/12/10/%E7%AC%94%E8%AE%B0/element-ui/index.html">
+<meta property="og:site_name" content="Haog&#39;s blog">
+<meta property="og:description" content="Layout布局通过基础的24分栏迅速便捷创建布局 基础布局通过 row 和 col 组件，并通过 col 组件的 span 属性我们就可以自由地组合布局。 1234567891011&lt;el-row&gt;    &lt;el-col :span&#x3D;&quot;4&quot;&gt;  宽度为 4&#x2F;24    &lt;div class&#x3D;&quot;grid-content bg-purple">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://2768085634.github.io/img/4.jpg">
+<meta property="article:published_time" content="2022-12-09T18:48:34.000Z">
+<meta property="article:modified_time" content="2022-12-09T18:49:43.457Z">
+<meta property="article:author" content="haog">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://2768085634.github.io/img/4.jpg"><link rel="shortcut icon" href="/img/illust_91549007_20211025_142020.png"><link rel="canonical" href="https://2768085634.github.io/2022/12/10/%E7%AC%94%E8%AE%B0/element-ui/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: haog","link":"链接: ","source":"来源: Haog's blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'element-ui',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-10 02:49:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/./img/4.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Haog's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 日志</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">element-ui</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-09T18:48:34.000Z" title="发表于 2022-12-10 02:48:34">2022-12-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-09T18:49:43.457Z" title="更新于 2022-12-10 02:49:43">2022-12-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Layout布局"><a href="#Layout布局" class="headerlink" title="Layout布局"></a>Layout布局</h1><p>通过基础的24分栏迅速便捷创建布局</p>
+<h2 id="基础布局"><a href="#基础布局" class="headerlink" title="基础布局"></a>基础布局</h2><p>通过 row 和 col 组件，并通过 col 组件的 <code>span</code> 属性我们就可以自由地组合布局。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;4&quot;&gt;  宽度为 4/24</span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;8&quot;&gt;  宽度为 8/24</span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple-light&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;12&quot;&gt;  宽度为 12/24</span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="分栏间隔"><a href="#分栏间隔" class="headerlink" title="分栏间隔"></a>分栏间隔</h2><p>Row 组件 提供 <code>gutter</code> 属性来指定每一栏之间的间隔，默认间隔为 0。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row :gutter=&quot;20&quot;&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;4&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;8&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple-light&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;12&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<p>意味着该行每个模块间隔为均为20px</p>
+<h2 id="分栏偏移"><a href="#分栏偏移" class="headerlink" title="分栏偏移"></a>分栏偏移</h2><p>支持偏移指定的栏数。</p>
+<p>通过制定 col 组件的 <code>offset</code> 属性可以指定分栏偏移的栏数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-col :span=&quot;8&quot;&gt;  </span><br><span class="line">  &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">&lt;/el-col&gt;  </span><br><span class="line">&lt;el-col :span=&quot;8&quot; :offset=&quot;8&quot;&gt;  </span><br><span class="line">  &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">&lt;/el-col&gt;</span><br></pre></td></tr></table></figure>
+
+<p>意味着第二个<code>el-col</code>向右 8&#x2F;24</p>
+<h2 id="对其方式"><a href="#对其方式" class="headerlink" title="对其方式"></a>对其方式</h2><p>通过 <code>flex</code> 布局来对分栏进行灵活的对齐。</p>
+<p>将 <code>type</code> 属性赋值为 ‘flex’，可以启用 flex 布局，并可通过 <code>justify</code> 属性来指定 start, center, end, space-between, space-around 其中的值来定义子元素的排版方式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row type=&quot;flex&quot; class=&quot;row-bg&quot; justify=&quot;center&quot;&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;6&quot;&gt;  </span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;6&quot;&gt;  </span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple-light&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">  &lt;el-col :span=&quot;6&quot;&gt;  </span><br><span class="line">    &lt;div class=&quot;grid-content bg-purple&quot;&gt;&lt;/div&gt;  </span><br><span class="line">  &lt;/el-col&gt;  </span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>start</code>左对齐(默认)</li>
+<li><code>center</code>竖直居中</li>
+<li><code>end</code>右对齐</li>
+<li><code>space-between</code>左右两边不留空隙,空间平分</li>
+<li><code>space-around</code>全平分,左右两边也留空隙</li>
+</ol>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><p>预设了五个响应尺寸：<code>xs</code>、<code>sm</code>、<code>md</code>、<code>lg</code> 和 <code>xl</code>。用法与 <code>:span</code> 一样，表示在不同尺寸页面上如何显示</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>尺寸</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>xs</td>
+<td>&lt;768px（也就是手机）</td>
+</tr>
+<tr>
+<td>sm</td>
+<td>&gt;&#x3D;768px</td>
+</tr>
+<tr>
+<td>md</td>
+<td>&gt;&#x3D;992px</td>
+</tr>
+<tr>
+<td>lg</td>
+<td>&gt;&#x3D;1200px</td>
+</tr>
+<tr>
+<td>xl</td>
+<td>&gt;&#x3D;1920px</td>
+</tr>
+</tbody></table>
+<p>示例：宽屏页面时内容仅仅占页面宽50%居中显示。窄屏幕时占70%，手机时占100%。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row :gutter=&quot;10&quot;&gt;</span><br><span class="line">  &lt;el-col :xs=&quot;&#123;span:24,offset:0&#125;&quot; :sm=&quot;&#123;span:16,offset:4&#125;&quot; :md=&quot;&#123;span:12,offset:6&#125;&quot;&gt;</span><br><span class="line">  &lt;/el-col&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基于断点的隐藏类"><a href="#基于断点的隐藏类" class="headerlink" title="基于断点的隐藏类"></a>基于断点的隐藏类</h3><p>Element 额外提供了一系列类名，用于在某些条件下隐藏元素。这些类名可以添加在任何 DOM 元素或自定义组件上。如果需要，请自行引入以下文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/display.css&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>包含的<strong>类</strong>名及其含义为：(使用class&#x3D;”name”进行使用)</p>
+<ul>
+<li><code>hidden-xs-only</code> - 当视口在 <code>xs</code> 尺寸时隐藏</li>
+<li><code>hidden-sm-only</code> - 当视口在 <code>sm</code> 尺寸时隐藏</li>
+<li><code>hidden-sm-and-down</code> - 当视口在 <code>sm</code> 及以下尺寸时隐藏</li>
+<li><code>hidden-sm-and-up</code> - 当视口在 <code>sm</code> 及以上尺寸时隐藏</li>
+<li><code>hidden-md-only</code> - 当视口在 <code>md</code> 尺寸时隐藏</li>
+<li><code>hidden-md-and-down</code> - 当视口在 <code>md</code> 及以下尺寸时隐藏</li>
+<li><code>hidden-md-and-up</code> - 当视口在 <code>md</code> 及以上尺寸时隐藏</li>
+<li><code>hidden-lg-only</code> - 当视口在 <code>lg</code> 尺寸时隐藏</li>
+<li><code>hidden-lg-and-down</code> - 当视口在 <code>lg</code> 及以下尺寸时隐藏</li>
+<li><code>hidden-lg-and-up</code> - 当视口在 <code>lg</code> 及以上尺寸时隐藏</li>
+<li><code>hidden-xl-only</code> - 当视口在 <code>xl</code> 尺寸时隐藏</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="Row-Attributes"><a href="#Row-Attributes" class="headerlink" title="Row Attributes"></a>Row Attributes</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gutter</td>
+<td>栅格间隔</td>
+<td>number</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>type</td>
+<td>布局模式，可选 flex，现代浏览器下有效</td>
+<td>string</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>justify</td>
+<td>flex 布局下的水平排列方式</td>
+<td>string</td>
+<td>start&#x2F;end&#x2F;center&#x2F;space-around&#x2F;space-between</td>
+<td>start</td>
+</tr>
+<tr>
+<td>align</td>
+<td>flex 布局下的垂直排列方式</td>
+<td>string</td>
+<td>top&#x2F;middle&#x2F;bottom</td>
+<td>top</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>自定义元素标签</td>
+<td>string</td>
+<td>*</td>
+<td>div</td>
+</tr>
+</tbody></table>
+<h3 id="Col-Attributes"><a href="#Col-Attributes" class="headerlink" title="Col Attributes"></a>Col Attributes</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>span</td>
+<td>栅格占据的列数</td>
+<td>number</td>
+<td>—</td>
+<td>24</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>栅格左侧的间隔格数</td>
+<td>number</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>push</td>
+<td>栅格向右移动格数</td>
+<td>number</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>pull</td>
+<td>栅格向左移动格数</td>
+<td>number</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr>
+<td>xs</td>
+<td>&lt;768px&amp;nbsp;响应式栅格数或者栅格属性对象</td>
+<td>number&#x2F;object (例如： {span: 4, offset: 4})</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>sm</td>
+<td>≥768px&amp;nbsp;响应式栅格数或者栅格属性对象</td>
+<td>number&#x2F;object (例如： {span: 4, offset: 4})</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>md</td>
+<td>≥992px&amp;nbsp;响应式栅格数或者栅格属性对象</td>
+<td>number&#x2F;object (例如： {span: 4, offset: 4})</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>lg</td>
+<td>≥1200px&amp;nbsp;响应式栅格数或者栅格属性对象</td>
+<td>number&#x2F;object (例如： {span: 4, offset: 4})</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>xl</td>
+<td>≥1920px&amp;nbsp;响应式栅格数或者栅格属性对象</td>
+<td>number&#x2F;object (例如： {span: 4, offset: 4})</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>自定义元素标签</td>
+<td>string</td>
+<td>*</td>
+<td>div</td>
+</tr>
+</tbody></table>
+<h1 id="Container布局容器"><a href="#Container布局容器" class="headerlink" title="Container布局容器"></a>Container布局容器</h1><p><code>&lt;el-container&gt;</code>外层容器,当子元素中包含<code>&lt;el-header&gt;</code>或者<code>&lt;el-footer&gt;</code>时,<strong>全部</strong>子元素会垂直上下排列,否则会水平左右排列</p>
+<p><code>&lt;el-header&gt;</code>顶栏容器</p>
+<p><code>&lt;el-footer&gt;</code>底栏容器</p>
+<p><code>&lt;el-aside&gt;</code>侧栏容器</p>
+<p><code>&lt;el-main&gt;</code>主要区域容器</p>
+<p>以上组件采用了 <strong>flex 布局</strong>，此外，<code>&lt;el-container&gt;</code> 的子元素只能是后四者，后四者的父元素也只能是 <code>&lt;el-container&gt;</code></p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><h3 id="Container-Attributes"><a href="#Container-Attributes" class="headerlink" title="Container Attributes"></a>Container Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">direction</td>
+<td align="left">子元素的排列方向</td>
+<td align="left">string</td>
+<td align="left">horizontal &#x2F; vertical</td>
+<td align="left">子元素中有 el-header 或 el-footer 时为 vertical，否则为 horizontal</td>
+</tr>
+</tbody></table>
+<h3 id="Header-Attributes"><a href="#Header-Attributes" class="headerlink" title="Header Attributes"></a>Header Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">height</td>
+<td align="left">顶栏高度</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">60px</td>
+</tr>
+</tbody></table>
+<h3 id="Aside-Attributes"><a href="#Aside-Attributes" class="headerlink" title="Aside Attributes"></a>Aside Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">width</td>
+<td align="left">侧边栏宽度</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">300px</td>
+</tr>
+</tbody></table>
+<h3 id="Footer-Attributes"><a href="#Footer-Attributes" class="headerlink" title="Footer Attributes"></a>Footer Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">height</td>
+<td align="left">底栏高度</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">60px</td>
+</tr>
+</tbody></table>
+<h1 id="Color色彩"><a href="#Color色彩" class="headerlink" title="Color色彩"></a>Color色彩</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">蓝 type=&quot;primary&quot;</span><br><span class="line">绿 type=&quot;success&quot;</span><br><span class="line">灰 type=&quot;info&quot;</span><br><span class="line">橙 type=&quot;warning&quot;</span><br><span class="line">红 type=&quot;danger&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Typography字体"><a href="#Typography字体" class="headerlink" title="Typography字体"></a>Typography字体</h1><h2 id="引入字体"><a href="#引入字体" class="headerlink" title="引入字体"></a>引入字体</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font-family</span>: <span class="string">&quot;Helvetica Neue&quot;</span>,Helvetica,<span class="string">&quot;PingFang SC&quot;</span>,<span class="string">&quot;Hiragino Sans GB&quot;</span>,<span class="string">&quot;Microsoft YaHei&quot;</span>,<span class="string">&quot;微软雅黑&quot;</span>,Arial,sans-serif;</span><br></pre></td></tr></table></figure>
+
+<h2 id="字体使用规范"><a href="#字体使用规范" class="headerlink" title="字体使用规范"></a>字体使用规范</h2><table>
+<thead>
+<tr>
+<th align="left">主标题</th>
+<th align="left">用 Element 快速搭建页面</th>
+<th align="left">20px Extra large</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">标题</td>
+<td align="left">用 Element 快速搭建页面</td>
+<td align="left">18px large</td>
+</tr>
+<tr>
+<td align="left">小标题</td>
+<td align="left">用 Element 快速搭建页面</td>
+<td align="left">16px Medium</td>
+</tr>
+<tr>
+<td align="left">正文</td>
+<td align="left">用 Element 快速搭建页面</td>
+<td align="left">14px Small</td>
+</tr>
+<tr>
+<td align="left">正文（小）</td>
+<td align="left">用 Element 快速搭建页面</td>
+<td align="left">13px Extra Small</td>
+</tr>
+<tr>
+<td align="left">辅助文字</td>
+<td align="left">用 Element 快速搭建页面</td>
+<td align="left">12px Extra Extra Small</td>
+</tr>
+</tbody></table>
+<h1 id="Icon图标"><a href="#Icon图标" class="headerlink" title="Icon图标"></a>Icon图标</h1><p>直接引用类名即可使用<code>class=&quot;name&quot;</code></p>
+<p><img src="https://raw.githubusercontent.com/2768085634/pic/main/202210151516823.png"></p>
+<p><img src="https://raw.githubusercontent.com/2768085634/pic/main/202210151516223.png"></p>
+<h1 id="Button按钮"><a href="#Button按钮" class="headerlink" title="Button按钮"></a>Button按钮</h1><h2 id="默认样式按钮"><a href="#默认样式按钮" class="headerlink" title="默认样式按钮"></a>默认样式按钮</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row&gt;</span><br><span class="line">  白底 &lt;el-button&gt;默认按钮&lt;/el-button&gt;</span><br><span class="line">  蓝底 &lt;el-button type=&quot;primary&quot;&gt;主要按钮&lt;/el-button&gt;</span><br><span class="line">  绿底 &lt;el-button type=&quot;success&quot;&gt;成功按钮&lt;/el-button&gt;</span><br><span class="line">  灰底 &lt;el-button type=&quot;info&quot;&gt;信息按钮&lt;/el-button&gt;</span><br><span class="line">  橙底 &lt;el-button type=&quot;warning&quot;&gt;警告按钮&lt;/el-button&gt;</span><br><span class="line">  红底 &lt;el-button type=&quot;danger&quot;&gt;危险按钮&lt;/el-button&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="简介按钮"><a href="#简介按钮" class="headerlink" title="简介按钮"></a>简介按钮</h2><p><code>plain</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row&gt;</span><br><span class="line">  &lt;el-button plain&gt;朴素按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;primary&quot; plain&gt;主要按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;success&quot; plain&gt;成功按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;info&quot; plain&gt;信息按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;warning&quot; plain&gt;警告按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;danger&quot; plain&gt;危险按钮&lt;/el-button&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="圆角按钮"><a href="#圆角按钮" class="headerlink" title="圆角按钮"></a>圆角按钮</h2><p>把默认样式按钮加上了圆角<code>round</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row&gt;</span><br><span class="line">  &lt;el-button round&gt;圆角按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;primary&quot; round&gt;主要按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;success&quot; round&gt;成功按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;info&quot; round&gt;信息按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;warning&quot; round&gt;警告按钮&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;danger&quot; round&gt;危险按钮&lt;/el-button&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="图标按钮"><a href="#图标按钮" class="headerlink" title="图标按钮"></a>图标按钮</h2><p>朴素按钮样式,图标代替文字,变成圆形</p>
+<p><code>circle</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row&gt;</span><br><span class="line">  &lt;el-button icon=&quot;el-icon-search&quot; circle&gt;&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot; circle&gt;&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;success&quot; icon=&quot;el-icon-check&quot; circle&gt;&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;info&quot; icon=&quot;el-icon-message&quot; circle&gt;&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;warning&quot; icon=&quot;el-icon-star-off&quot; circle&gt;&lt;/el-button&gt;</span><br><span class="line">  &lt;el-button type=&quot;danger&quot; icon=&quot;el-icon-delete&quot; circle&gt;&lt;/el-button&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁用按钮"><a href="#禁用按钮" class="headerlink" title="禁用按钮"></a>禁用按钮</h2><p><code>disabled</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button disabled&gt;朴素按钮&lt;/el-button&gt;</span><br><span class="line">&lt;el-button type=&quot;primary&quot; disabled&gt;主要按钮&lt;/el-button&gt;</span><br><span class="line">&lt;el-button type=&quot;success&quot; disabled&gt;成功按钮&lt;/el-button&gt;</span><br><span class="line">&lt;el-button type=&quot;info&quot; disabled&gt;信息按钮&lt;/el-button&gt;</span><br><span class="line">&lt;el-button type=&quot;warning&quot; disabled&gt;警告按钮&lt;/el-button&gt;</span><br><span class="line">&lt;el-button type=&quot;danger&quot; disabled&gt;危险按钮&lt;/el-button&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文字按钮"><a href="#文字按钮" class="headerlink" title="文字按钮"></a>文字按钮</h2><p>没有边框和背景色的按钮。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button type=&quot;text&quot;&gt;文字按钮&lt;/el-button&gt;</span><br><span class="line">&lt;el-button type=&quot;text&quot; disabled&gt;文字按钮&lt;/el-button&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按钮组"><a href="#按钮组" class="headerlink" title="按钮组"></a>按钮组</h2><p>以按钮组的方式出现，常用于多项类似操作。<code>&lt;el-button-group&gt;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button-group&gt;</span><br><span class="line">	&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-edit&quot;&gt;&lt;/el-button&gt;</span><br><span class="line">	&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-share&quot;&gt;&lt;/el-button&gt;</span><br><span class="line">	&lt;el-button type=&quot;primary&quot; icon=&quot;el-icon-delete&quot;&gt;&lt;/el-button&gt;</span><br><span class="line">&lt;/el-button-group&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加载中"><a href="#加载中" class="headerlink" title="加载中"></a>加载中</h2><p>点击按钮后进行数据加载操作，在按钮上显示加载状态。<code>:loading=&quot;true&quot;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-button type=&quot;primary&quot; :loading=&quot;true&quot;&gt;加载中&lt;/el-button&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="不同尺寸"><a href="#不同尺寸" class="headerlink" title="不同尺寸"></a>不同尺寸</h2><p>额外的尺寸：<code>medium</code>、<code>small</code>、<code>mini</code>，通过设置<code>size</code>属性来配置它们。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-row&gt;</span><br><span class="line">	&lt;el-button&gt;默认按钮&lt;/el-button&gt;</span><br><span class="line">	&lt;el-button size=&quot;medium&quot;&gt;中等按钮&lt;/el-button&gt;</span><br><span class="line">	&lt;el-button size=&quot;small&quot;&gt;小型按钮&lt;/el-button&gt;</span><br><span class="line">	&lt;el-button size=&quot;mini&quot;&gt;超小按钮&lt;/el-button&gt;</span><br><span class="line">&lt;/el-row&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><h3 id="Attributes"><a href="#Attributes" class="headerlink" title="Attributes"></a>Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">size</td>
+<td align="left">尺寸</td>
+<td align="left">string</td>
+<td align="left">medium &#x2F; small &#x2F; mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">type</td>
+<td align="left">类型</td>
+<td align="left">string</td>
+<td align="left">primary &#x2F; success &#x2F; warning &#x2F; danger &#x2F; info &#x2F; text</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">plain</td>
+<td align="left">是否朴素按钮</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">round</td>
+<td align="left">是否圆角按钮</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">circle</td>
+<td align="left">是否圆形按钮</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">loading</td>
+<td align="left">是否加载中状态</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用状态</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">icon</td>
+<td align="left">图标类名</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">autofocus</td>
+<td align="left">是否默认聚焦</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">native-type</td>
+<td align="left">原生 type 属性</td>
+<td align="left">string</td>
+<td align="left">button &#x2F; submit &#x2F; reset</td>
+<td align="left">button</td>
+</tr>
+</tbody></table>
+<h1 id="Radio单选框"><a href="#Radio单选框" class="headerlink" title="Radio单选框"></a>Radio单选框</h1><h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><p>由于选项默认可见，不宜过多，若选项过多，建议使用 Select 选择器。</p>
+<p>选项默认横向排列</p>
+<p>要使用 Radio 组件，只需要设置<code>v-model</code>绑定变量，选中意味着变量的值为相应 Radio <code>label</code>属性的值，<code>label</code>可以是<code>String</code>、<code>Number</code>或<code>Boolean</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-radio v-model=&quot;v&quot; label=&quot;1&quot;&gt;1&lt;/el-radio&gt;  </span><br><span class="line">&lt;el-radio v-model=&quot;v&quot; label=&quot;2&quot;&gt;2&lt;/el-radio&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;  </span><br><span class="line">  <span class="keyword">return</span> &#123;  </span><br><span class="line">    <span class="attr">v</span>: <span class="number">1</span>  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁用状态"><a href="#禁用状态" class="headerlink" title="禁用状态"></a>禁用状态</h2><p>单选框不可用的状态，只要在<code>el-radio</code>元素中设置<code>disabled</code>属性即可，它接受一个<code>Boolean</code>，<code>true</code>为禁用。用法与<code>el-button</code>中<code>disabled</code>用法一样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-radio v-model=&quot;v&quot; label=&quot;禁用&quot; disabled&gt;1&lt;/el-radio&gt;  </span><br><span class="line">&lt;el-radio v-model=&quot;v&quot; label=&quot;选中且禁用&quot;&gt;2&lt;/el-radio&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;  </span><br><span class="line">  <span class="keyword">return</span> &#123;  </span><br><span class="line">    <span class="attr">v</span>: <span class="string">&quot;选中且禁用&quot;</span></span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="单选框组"><a href="#单选框组" class="headerlink" title="单选框组"></a>单选框组</h2><p>结合<code>el-radio-group</code>元素和子元素<code>el-radio</code>可以实现单选组，在<code>el-radio-group</code>中绑定<code>v-model</code>，在<code>el-radio</code>中设置好<code>label</code>即可，无需再给每一个<code>el-radio</code>绑定变量，另外，还提供了<code>change</code>事件（**@change**）来响应变化，它会传入一个参数<code>value</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-radio-group v-model=&quot;v&quot;&gt;</span><br><span class="line">	&lt;el-radio :label=&quot;3&quot;&gt;备选项&lt;/el-radio&gt;</span><br><span class="line">	&lt;el-radio :label=&quot;6&quot;&gt;备选项&lt;/el-radio&gt;</span><br><span class="line">	&lt;el-radio :label=&quot;9&quot;&gt;备选项&lt;/el-radio&gt;</span><br><span class="line">&lt;/el-radio-group&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;  </span><br><span class="line">  <span class="keyword">return</span> &#123;  </span><br><span class="line">    <span class="attr">v</span>: <span class="number">6</span></span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按钮样式"><a href="#按钮样式" class="headerlink" title="按钮样式"></a>按钮样式</h2><p>按钮样式的单选组合。只需要变成<code>el-radio-button</code>即可，此外，Element 还提供了<code>size</code>属性，<code>size</code>属性用在<code>el-radio-group</code>上。</p>
+<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p>设置<code>border</code>属性可以渲染为带有边框的单选框。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-radio v-model=&quot;v&quot; label=&quot;1&quot; border&gt;1&lt;/el-radio&gt;  </span><br><span class="line">&lt;el-radio v-model=&quot;v&quot; label=&quot;2&quot; border&gt;2&lt;/el-radio&gt;</span><br></pre></td></tr></table></figure>
+
+<p>该属性<strong>不能</strong>用于单选框组<code>el-radio-group</code></p>
+<h2 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h2><h3 id="Radio-Attributes"><a href="#Radio-Attributes" class="headerlink" title="Radio Attributes"></a>Radio Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">label</td>
+<td align="left">Radio 的 value</td>
+<td align="left">string &#x2F; number &#x2F; boolean</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">border</td>
+<td align="left">是否显示边框</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">Radio 的尺寸，仅在 border 为真时有效</td>
+<td align="left">string</td>
+<td align="left">medium &#x2F; small &#x2F; mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生 name 属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+</tbody></table>
+<h3 id="Radio-Events"><a href="#Radio-Events" class="headerlink" title="Radio Events"></a>Radio Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">change</td>
+<td align="left">绑定值变化时触发的事件</td>
+<td align="left">选中的 Radio label 值</td>
+</tr>
+</tbody></table>
+<h3 id="Radio-group-Attributes"><a href="#Radio-group-Attributes" class="headerlink" title="Radio-group Attributes"></a>Radio-group Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">size</td>
+<td align="left">单选框组尺寸，仅对按钮形式的 Radio 或带有边框的 Radio 有效</td>
+<td align="left">string</td>
+<td align="left">medium &#x2F; small &#x2F; mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">text-color</td>
+<td align="left">按钮形式的 Radio 激活时的文本颜色</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">#ffffff</td>
+</tr>
+<tr>
+<td align="left">fill</td>
+<td align="left">按钮形式的 Radio 激活时的填充色和边框色</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">#409EFF</td>
+</tr>
+</tbody></table>
+<h3 id="Radio-group-Events"><a href="#Radio-group-Events" class="headerlink" title="Radio-group Events"></a>Radio-group Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">change</td>
+<td align="left">绑定值变化时触发的事件</td>
+<td align="left">选中的 Radio label 值</td>
+</tr>
+</tbody></table>
+<h3 id="Radio-button-Attributes"><a href="#Radio-button-Attributes" class="headerlink" title="Radio-button Attributes"></a>Radio-button Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">label</td>
+<td align="left">Radio 的 value</td>
+<td align="left">string &#x2F; number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生 name 属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+</tbody></table>
+<h1 id="Checkbox多选框"><a href="#Checkbox多选框" class="headerlink" title="Checkbox多选框"></a>Checkbox多选框</h1><h2 id="基础用法-1"><a href="#基础用法-1" class="headerlink" title="基础用法"></a>基础用法</h2><p>单独使用可以表示两种状态之间的切换，写在标签中的内容为 checkbox 按钮后的介绍。</p>
+<p>在<code>el-checkbox</code>元素中定义<code>v-model</code>绑定变量，单一的<code>checkbox</code>中，**默认绑定变量的值会是<code>Boolean</code>，选中为<code>true</code>**，即可以不用<code>label</code>，只需<code>v-model</code>对应的值为<code>true</code>即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-checkbox v-model=&quot;v&quot; label=&quot;1&quot;&gt;1&lt;/el-checkbox&gt;  </span><br><span class="line">&lt;el-checkbox v-model=&quot;v&quot; label=&quot;2&quot;&gt;2&lt;/el-checkbox&gt;  </span><br><span class="line">&lt;el-checkbox v-model=&quot;v&quot; label=&quot;3&quot;&gt;3&lt;/el-checkbox&gt;  </span><br><span class="line">&lt;el-checkbox v-model=&quot;v&quot; label=&quot;4&quot;&gt;4&lt;/el-checkbox&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">data</span>(<span class="params"></span>) &#123;  </span><br><span class="line">  <span class="keyword">return</span> &#123;  </span><br><span class="line">    <span class="attr">v</span>: [<span class="number">1</span>, <span class="number">3</span>]  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁用状态-1"><a href="#禁用状态-1" class="headerlink" title="禁用状态"></a>禁用状态</h2><p>多选框不可用状态。设置<code>disabled</code>属性即可。</p>
+<h2 id="多选框组"><a href="#多选框组" class="headerlink" title="多选框组"></a>多选框组</h2><p>适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。</p>
+<p><code>checkbox-group</code>元素能把多个 checkbox 管理为一组，只需要在 Group 中使用<code>v-model</code>绑定<code>Array</code>类型的变量即可。 <code>el-checkbox</code> 的 <code>label</code>属性是该 checkbox 对应的值，若该标签中无内容，则该属性也充当 checkbox 按钮后的介绍。<code>label</code>与数组中的元素值相对应，如果存在指定的值则为选中状态，否则为不选中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-checkbox-group v-model=&quot;checkList&quot;&gt;</span><br><span class="line">	&lt;el-checkbox label=&quot;复选框 A&quot;&gt;&lt;/el-checkbox&gt;</span><br><span class="line">	&lt;el-checkbox label=&quot;复选框 B&quot;&gt;&lt;/el-checkbox&gt;</span><br><span class="line">	&lt;el-checkbox label=&quot;复选框 C&quot;&gt;&lt;/el-checkbox&gt;</span><br><span class="line">	&lt;el-checkbox label=&quot;禁用&quot; disabled&gt;&lt;/el-checkbox&gt;</span><br><span class="line">	&lt;el-checkbox label=&quot;选中且禁用&quot; disabled&gt;&lt;/el-checkbox&gt;</span><br><span class="line">&lt;/el-checkbox-group&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data () &#123; </span><br><span class="line">	<span class="keyword">return</span> &#123; </span><br><span class="line">		<span class="attr">checkList</span>: [<span class="string">&#x27;选中且禁用&#x27;</span>,<span class="string">&#x27;复选框 A&#x27;</span>] </span><br><span class="line">	&#125;; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="indeterminate-状态"><a href="#indeterminate-状态" class="headerlink" title="indeterminate 状态"></a>indeterminate 状态</h2><p><code>indeterminate</code> 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果。但是功能还要自己实现。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-checkbox :indeterminate=&quot;isIndeterminate&quot; v-model=&quot;checkAll&quot; @change=&quot;handleCheckAllChange&quot;&gt;全选&lt;/el-checkbox&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="可选项目数量的限制"><a href="#可选项目数量的限制" class="headerlink" title="可选项目数量的限制"></a>可选项目数量的限制</h2><p>使用 <code>min</code> 和 <code>max</code> 属性能够限制可以被勾选的项目的数量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-checkbox-group :min=&quot;1&quot; :max=&quot;3&quot;&gt;  </span><br><span class="line">  &lt;el-checkbox v-model=&quot;v&quot; label=&quot;1&quot; border&gt;1&lt;/el-checkbox&gt;  </span><br><span class="line">  &lt;el-checkbox v-model=&quot;v&quot; label=&quot;2&quot; border&gt;2&lt;/el-checkbox&gt;  </span><br><span class="line">  &lt;el-checkbox v-model=&quot;v&quot; label=&quot;2&quot; border&gt;2&lt;/el-checkbox&gt;  </span><br><span class="line">  &lt;el-checkbox v-model=&quot;v&quot; label=&quot;2&quot; border&gt;2&lt;/el-checkbox&gt;  </span><br><span class="line">&lt;/el-checkbox-group&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按钮样式-1"><a href="#按钮样式-1" class="headerlink" title="按钮样式"></a>按钮样式</h2><p>按钮样式的多选组合。只需要把<code>el-checkbox</code>元素替换为<code>el-checkbox-button</code>元素即可。此外，Element 还提供了<code>size</code>属性。<code>size</code>属性用在<code>el-checkbox-group</code>上</p>
+<h2 id="边框-1"><a href="#边框-1" class="headerlink" title="边框"></a>边框</h2><p>设置<code>border</code>属性可以渲染为带有边框的单选框。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-checkbox v-model=&quot;v&quot; label=&quot;1&quot; border&gt;1&lt;/el-radio&gt;  </span><br><span class="line">&lt;el-checkbox v-model=&quot;v&quot; label=&quot;2&quot; border&gt;2&lt;/el-radio&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h2><h3 id="Checkbox-Attributes"><a href="#Checkbox-Attributes" class="headerlink" title="Checkbox Attributes"></a>Checkbox Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">label</td>
+<td align="left">选中状态的值（只有在checkbox-group或者绑定对象类型为array时有效）</td>
+<td align="left">string &#x2F; number &#x2F; boolean</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">true-label</td>
+<td align="left">选中时的值</td>
+<td align="left">string &#x2F; number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">false-label</td>
+<td align="left">没有选中时的值</td>
+<td align="left">string &#x2F; number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">border</td>
+<td align="left">是否显示边框</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">Checkbox 的尺寸，仅在 border 为真时有效</td>
+<td align="left">string</td>
+<td align="left">medium &#x2F; small &#x2F; mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生 name 属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">checked</td>
+<td align="left">当前是否勾选</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">indeterminate</td>
+<td align="left">设置 indeterminate 状态，只负责样式控制</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h3 id="Checkbox-Events"><a href="#Checkbox-Events" class="headerlink" title="Checkbox Events"></a>Checkbox Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">change</td>
+<td align="left">当绑定值变化时触发的事件</td>
+<td align="left">更新后的值</td>
+</tr>
+</tbody></table>
+<h3 id="Checkbox-group-Attributes"><a href="#Checkbox-group-Attributes" class="headerlink" title="Checkbox-group Attributes"></a>Checkbox-group Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">size</td>
+<td align="left">多选框组尺寸，仅对按钮形式的 Checkbox 或带有边框的 Checkbox 有效</td>
+<td align="left">string</td>
+<td align="left">medium &#x2F; small &#x2F; mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="left">可被勾选的 checkbox 的最小数量</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="left">可被勾选的 checkbox 的最大数量</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">text-color</td>
+<td align="left">按钮形式的 Checkbox 激活时的文本颜色</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">#ffffff</td>
+</tr>
+<tr>
+<td align="left">fill</td>
+<td align="left">按钮形式的 Checkbox 激活时的填充色和边框色</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">#409EFF</td>
+</tr>
+</tbody></table>
+<h3 id="Checkbox-group-Events"><a href="#Checkbox-group-Events" class="headerlink" title="Checkbox-group Events"></a>Checkbox-group Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">change</td>
+<td align="left">当绑定值变化时触发的事件</td>
+<td align="left">更新后的值</td>
+</tr>
+</tbody></table>
+<h3 id="Checkbox-button-Attributes"><a href="#Checkbox-button-Attributes" class="headerlink" title="Checkbox-button Attributes"></a>Checkbox-button Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">label</td>
+<td align="left">选中状态的值（只有在checkbox-group或者绑定对象类型为array时有效）</td>
+<td align="left">string &#x2F; number &#x2F; boolean</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">true-label</td>
+<td align="left">选中时的值</td>
+<td align="left">string &#x2F; number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">false-label</td>
+<td align="left">没有选中时的值</td>
+<td align="left">string &#x2F; number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生 name 属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">checked</td>
+<td align="left">当前是否勾选</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h1 id="Input输入框"><a href="#Input输入框" class="headerlink" title="Input输入框"></a>Input输入框</h1><h2 id="基础用法-2"><a href="#基础用法-2" class="headerlink" title="基础用法"></a>基础用法</h2><p>与<code>input</code>标签类似</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input v-model=&quot;v&quot; placeholder=&quot;内容&quot;&gt;&lt;/el-input&gt;</span><br><span class="line"></span><br><span class="line">data() &#123;  </span><br><span class="line">  return &#123;  </span><br><span class="line">    v: &quot;&quot;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁用状态-2"><a href="#禁用状态-2" class="headerlink" title="禁用状态"></a>禁用状态</h2><p>通过 <code>disabled</code> 属性指定是否禁用 input 组件</p>
+<p><code>disabled</code>与<code>:disabled=&quot;true&quot;</code>效果一样</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input v-model=&quot;v&quot; placeholder=&quot;内容&quot; :disabled=&quot;true&quot;&gt;&lt;/el-input&gt;</span><br><span class="line"></span><br><span class="line">data() &#123;  </span><br><span class="line">  return &#123;  </span><br><span class="line">    v: &quot;&quot;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="可清空"><a href="#可清空" class="headerlink" title="可清空"></a>可清空</h2><p>使用<code>clearable</code>属性即可得到一个可清空的输入框(一键清空功能)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input v-model=&quot;v&quot; placeholder=&quot;内容&quot; :disabled=&quot;false&quot; clearable&gt;&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="带-icon-的输入框"><a href="#带-icon-的输入框" class="headerlink" title="带 icon 的输入框"></a>带 icon 的输入框</h2><p>带有图标标记输入类型</p>
+<p>可以通过 <code>prefix-icon</code> 和 <code>suffix-icon</code> 属性在 input 组件首部和尾部增加显示图标，也可以通过 slot(插槽) 来放置图标。</p>
+<p><code>prefix-icon</code>首部<br><code>suffix-icon</code>尾部</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/114502325">vue插槽（slot）详解 - 知乎 (zhihu.com)</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input  </span><br><span class="line">  placeholder=&quot;请选择日期&quot;  </span><br><span class="line">  suffix-icon=&quot;el-icon-date&quot;  </span><br><span class="line">  v-model=&quot;v1&quot;&gt;  </span><br><span class="line">&lt;/el-input&gt;  </span><br><span class="line">&lt;el-input  </span><br><span class="line">  placeholder=&quot;请输入内容&quot;  </span><br><span class="line">  prefix-icon=&quot;el-icon-search&quot;  </span><br><span class="line">  v-model=&quot;v2&quot;&gt;  </span><br><span class="line">&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文本域"><a href="#文本域" class="headerlink" title="文本域"></a>文本域</h2><p>用于输入多行文本信息，通过将 <code>type</code> 属性的值指定为 textarea。</p>
+<p>文本域高度可通过 <code>rows</code> 属性控制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input v-model=&quot;v1&quot; type=&quot;textarea&quot; :rows=&quot;2&quot;&gt;&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="可自适应文本高度的文本域"><a href="#可自适应文本高度的文本域" class="headerlink" title="可自适应文本高度的文本域"></a>可自适应文本高度的文本域</h3><p>通过设置 <code>autosize</code> 属性可以使得文本域的高度能够根据文本内容自动进行调整，并且 <code>autosize</code> 还可以设定为一个对象，指定最小行数和最大行数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input v-model=&quot;v1&quot; type=&quot;textarea&quot; :autosize=&quot;&#123; maxRows: 4, minRows: 2&#125;&quot;&gt;&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复合型输入框"><a href="#复合型输入框" class="headerlink" title="复合型输入框"></a>复合型输入框</h2><p>可前置或后置元素，一般为标签或按钮</p>
+<p>可通过 slot 来指定在 input 中前置或者后置内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input placeholder=&quot;请输入内容&quot; v-model=&quot;input4&quot;&gt;  </span><br><span class="line">  &lt;template slot=&quot;append&quot;&gt;.com&lt;/template&gt;  </span><br><span class="line">  &lt;template slot=&quot;prepend&quot;&gt;Http://&lt;/template&gt;  </span><br><span class="line">&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><p>可通过 <code>size</code> 属性指定输入框的尺寸，除了默认的大小外，还提供了 medium、small 和 mini 三种尺寸。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input placeholder=&quot;请输入内容&quot; size=&quot;small&quot;&gt;  </span><br><span class="line">  &lt;template slot=&quot;prepend&quot;&gt;Http://&lt;/template&gt;  </span><br><span class="line">&lt;/el-input&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="带输入建议"><a href="#带输入建议" class="headerlink" title="带输入建议"></a>带输入建议</h2><p>根据输入内容提供对应的输入建议</p>
+<p>autocomplete 是一个可带输入建议的输入框组件，<code>fetch-suggestions</code> 是一个返回输入建议的方法属性，如 querySearch(queryString, cb)，在该方法中你可以在你的输入建议数据准备好时通过 cb(data) 返回到 autocomplete 组件中。</p>
+<p><code>:trigger-on-focus</code>意味是否在聚焦时显示建议,默认为<code>true</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;  </span><br><span class="line">    &lt;el-autocomplete  </span><br><span class="line">    v-model=&quot;v&quot;  </span><br><span class="line">    :fetch-suggestions=&quot;qS&quot;  </span><br><span class="line">    :trigger-on-focus=&quot;false&quot;  </span><br><span class="line">    clearable&gt;  </span><br><span class="line">    &lt;/el-autocomplete&gt;  </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">export default &#123;  </span><br><span class="line">  name: &#x27;App&#x27;,  </span><br><span class="line">  data() &#123;  </span><br><span class="line">    return &#123;  </span><br><span class="line">      st: [],  </span><br><span class="line">      v: &#x27;&#x27;  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;,  </span><br><span class="line">  methods: &#123;  </span><br><span class="line">    sc(item) &#123;  </span><br><span class="line">      console.log(item)  </span><br><span class="line">    &#125;,  </span><br><span class="line">    qS: function (queryString, cb) &#123;  </span><br><span class="line">      let st = this.st;  </span><br><span class="line">      let result = queryString ? st.filter(this.creatFilter(queryString)) : st;  </span><br><span class="line">      cb(result);  </span><br><span class="line">      // 得到的result是个数组  </span><br><span class="line">      // console.log(result[0].address)  </span><br><span class="line">    &#125;,  </span><br><span class="line">    creatFilter(queryString) &#123;  </span><br><span class="line">      return(st1 =&gt; &#123;  </span><br><span class="line">        return (st1.value.toLowerCase().match(queryString.toLowerCase()));  </span><br><span class="line">      &#125;)  </span><br><span class="line">    &#125;,  </span><br><span class="line">    getAll: function () &#123;  </span><br><span class="line">      return [  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;三全鲜食（北新泾店）&quot;, &quot;address&quot;: &quot;长宁区新渔路144号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;Hot honey 首尔炸鸡（仙霞路）&quot;, &quot;address&quot;: &quot;上海市长宁区淞虹路661号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;新旺角茶餐厅&quot;, &quot;address&quot;: &quot;上海市普陀区真北路988号创邑金沙谷6号楼113&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;泷千家(天山西路店)&quot;, &quot;address&quot;: &quot;天山西路438号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;胖仙女纸杯蛋糕（上海凌空店）&quot;, &quot;address&quot;: &quot;上海市长宁区金钟路968号1幢18号楼一层商铺18-101&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;贡茶&quot;, &quot;address&quot;: &quot;上海市长宁区金钟路633号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;豪大大香鸡排超级奶爸&quot;, &quot;address&quot;: &quot;上海市嘉定区曹安公路曹安路1685号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;茶芝兰（奶茶，手抓饼）&quot;, &quot;address&quot;: &quot;上海市普陀区同普路1435号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;十二泷町&quot;, &quot;address&quot;: &quot;上海市北翟路1444弄81号B幢-107&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;星移浓缩咖啡&quot;, &quot;address&quot;: &quot;上海市嘉定区新郁路817号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;阿姨奶茶/豪大大&quot;, &quot;address&quot;: &quot;嘉定区曹安路1611号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;新麦甜四季甜品炸鸡&quot;, &quot;address&quot;: &quot;嘉定区曹安公路2383弄55号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;Monica摩托主题咖啡店&quot;, &quot;address&quot;: &quot;嘉定区江桥镇曹安公路2409号1F，2383弄62号1F&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;浮生若茶（凌空soho店）&quot;, &quot;address&quot;: &quot;上海长宁区金钟路968号9号楼地下一层&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;NONO JUICE  鲜榨果汁&quot;, &quot;address&quot;: &quot;上海市长宁区天山西路119号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;CoCo都可(北新泾店）&quot;, &quot;address&quot;: &quot;上海市长宁区仙霞西路&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;快乐柠檬（神州智慧店）&quot;, &quot;address&quot;: &quot;上海市长宁区天山西路567号1层R117号店铺&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;Merci Paul cafe&quot;, &quot;address&quot;: &quot;上海市普陀区光复西路丹巴路28弄6号楼819&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;猫山王（西郊百联店）&quot;, &quot;address&quot;: &quot;上海市长宁区仙霞西路88号第一层G05-F01-1-306&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;枪会山&quot;, &quot;address&quot;: &quot;上海市普陀区棕榈路&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;纵食&quot;, &quot;address&quot;: &quot;元丰天山花园(东门) 双流路267号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;钱记&quot;, &quot;address&quot;: &quot;上海市长宁区天山西路&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;壹杯加&quot;, &quot;address&quot;: &quot;上海市长宁区通协路&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;唦哇嘀咖&quot;, &quot;address&quot;: &quot;上海市长宁区新泾镇金钟路999号2幢（B幢）第01层第1-02A单元&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;爱茜茜里(西郊百联)&quot;, &quot;address&quot;: &quot;长宁区仙霞西路88号1305室&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;爱茜茜里(近铁广场)&quot;, &quot;address&quot;: &quot;上海市普陀区真北路818号近铁城市广场北区地下二楼N-B2-O2-C商铺&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;鲜果榨汁（金沙江路和美广店）&quot;, &quot;address&quot;: &quot;普陀区金沙江路2239号金沙和美广场B1-10-6&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;开心丽果（缤谷店）&quot;, &quot;address&quot;: &quot;上海市长宁区威宁路天山路341号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;超级鸡车（丰庄路店）&quot;, &quot;address&quot;: &quot;上海市嘉定区丰庄路240号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;妙生活果园（北新泾店）&quot;, &quot;address&quot;: &quot;长宁区新渔路144号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;香宜度麻辣香锅&quot;, &quot;address&quot;: &quot;长宁区淞虹路148号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;凡仔汉堡（老真北路店）&quot;, &quot;address&quot;: &quot;上海市普陀区老真北路160号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;港式小铺&quot;, &quot;address&quot;: &quot;上海市长宁区金钟路968号15楼15-105室&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;蜀香源麻辣香锅（剑河路店）&quot;, &quot;address&quot;: &quot;剑河路443-1&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;北京饺子馆&quot;, &quot;address&quot;: &quot;长宁区北新泾街道天山西路490-1号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;饭典*新简餐（凌空SOHO店）&quot;, &quot;address&quot;: &quot;上海市长宁区金钟路968号9号楼地下一层9-83室&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;焦耳·川式快餐（金钟路店）&quot;, &quot;address&quot;: &quot;上海市金钟路633号地下一层甲部&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;动力鸡车&quot;, &quot;address&quot;: &quot;长宁区仙霞西路299弄3号101B&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;浏阳蒸菜&quot;, &quot;address&quot;: &quot;天山西路430号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;四海游龙（天山西路店）&quot;, &quot;address&quot;: &quot;上海市长宁区天山西路&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;樱花食堂（凌空店）&quot;, &quot;address&quot;: &quot;上海市长宁区金钟路968号15楼15-105室&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;壹分米客家传统调制米粉(天山店)&quot;, &quot;address&quot;: &quot;天山西路428号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;福荣祥烧腊（平溪路店）&quot;, &quot;address&quot;: &quot;上海市长宁区协和路福泉路255弄57-73号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;速记黄焖鸡米饭&quot;, &quot;address&quot;: &quot;上海市长宁区北新泾街道金钟路180号1层01号摊位&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;红辣椒麻辣烫&quot;, &quot;address&quot;: &quot;上海市长宁区天山西路492号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;(小杨生煎)西郊百联餐厅&quot;, &quot;address&quot;: &quot;长宁区仙霞西路88号百联2楼&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;阳阳麻辣烫&quot;, &quot;address&quot;: &quot;天山西路389号&quot; &#125;,  </span><br><span class="line">        &#123; &quot;value&quot;: &quot;南拳妈妈龙虾盖浇饭&quot;, &quot;address&quot;: &quot;普陀区金沙江路1699号鑫乐惠美食广场A13&quot; &#125;  </span><br><span class="line">      ]  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;,  </span><br><span class="line">  mounted() &#123;  </span><br><span class="line">    this.st = this.getAll();  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义输入建议模板"><a href="#自定义输入建议模板" class="headerlink" title="自定义输入建议模板"></a>自定义输入建议模板</h2><p>可自定义输入建议的显示</p>
+<p>使用<code>scoped slot</code>自定义输入建议的模板。该 scope 的参数为<code>item</code>，表示当前输入建议对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-autocomplete  </span><br><span class="line">v-model=&quot;v&quot;  </span><br><span class="line">:fetch-suggestions=&quot;qS&quot;  </span><br><span class="line">:trigger-on-focus=&quot;false&quot;  </span><br><span class="line">clearable&gt;  </span><br><span class="line">  &lt;i  </span><br><span class="line">    class=&quot;el-icon-edit el-input__icon&quot;  </span><br><span class="line">    slot=&quot;suffix&quot;  </span><br><span class="line">    &gt;  </span><br><span class="line">  &lt;/i&gt;  </span><br><span class="line">  &lt;template slot-scope=&quot;&#123; item &#125;&quot;&gt;  </span><br><span class="line">    &lt;div class=&quot;name&quot;&gt;&#123;&#123; item.value &#125;&#125;&lt;/div&gt;  </span><br><span class="line">    &lt;span class=&quot;addr&quot;&gt;&#123;&#123; item.address &#125;&#125;&lt;/span&gt;  </span><br><span class="line">  &lt;/template&gt;  </span><br><span class="line">&lt;/el-autocomplete&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结-5"><a href="#总结-5" class="headerlink" title="总结"></a>总结</h2><h3 id="Input-Attributes"><a href="#Input-Attributes" class="headerlink" title="Input Attributes"></a>Input Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">type</td>
+<td align="left">类型</td>
+<td align="left">string</td>
+<td align="left">text，textarea 和其他 原生 input 的 type 值</td>
+<td align="left">text</td>
+</tr>
+<tr>
+<td align="left">value</td>
+<td align="left">绑定值</td>
+<td align="left">string &#x2F; number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">maxlength</td>
+<td align="left">原生属性，最大输入长度</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">minlength</td>
+<td align="left">原生属性，最小输入长度</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">placeholder</td>
+<td align="left">输入框占位文本</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">clearable</td>
+<td align="left">是否可清空</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">输入框尺寸，只在 type!&#x3D;”textarea”时有效</td>
+<td align="left">string</td>
+<td align="left">medium &#x2F; small &#x2F; mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">prefix-icon</td>
+<td align="left">输入框头部图标</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">suffix-icon</td>
+<td align="left">输入框尾部图标</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">rows</td>
+<td align="left">输入框行数，只对 type&#x3D;”textarea”有效</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">autosize</td>
+<td align="left">自适应内容高度，只对 type&#x3D;”textarea” 有效，可传入对象，如，{ minRows: 2, maxRows: 6 }</td>
+<td align="left">boolean &#x2F; object</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">auto-complete</td>
+<td align="left">原生属性，自动补全</td>
+<td align="left">string</td>
+<td align="left">on, off</td>
+<td align="left">off</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">readonly</td>
+<td align="left">原生属性，是否只读</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="left">原生属性，设置最大值</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="left">原生属性，设置最小值</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">step</td>
+<td align="left">原生属性，设置输入字段的合法数字间隔</td>
+<td align="left">—</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">resize</td>
+<td align="left">控制是否能被用户缩放</td>
+<td align="left">string</td>
+<td align="left">none, both, horizontal, vertical</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">autofocus</td>
+<td align="left">原生属性，自动获取焦点</td>
+<td align="left">boolean</td>
+<td align="left">true, false</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">form</td>
+<td align="left">原生属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">label</td>
+<td align="left">输入框关联的label文字</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">tabindex</td>
+<td align="left">输入框的tabindex</td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h3 id="Input-Slots"><a href="#Input-Slots" class="headerlink" title="Input Slots"></a>Input Slots</h3><table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">prefix</td>
+<td align="left">输入框头部内容，只对 type&#x3D;”text” 有效</td>
+</tr>
+<tr>
+<td align="left">suffix</td>
+<td align="left">输入框尾部内容，只对 type&#x3D;”text” 有效</td>
+</tr>
+<tr>
+<td align="left">prepend</td>
+<td align="left">输入框前置内容，只对 type&#x3D;”text” 有效</td>
+</tr>
+<tr>
+<td align="left">append</td>
+<td align="left">输入框后置内容，只对 type&#x3D;”text” 有效</td>
+</tr>
+</tbody></table>
+<h3 id="Input-Events"><a href="#Input-Events" class="headerlink" title="Input Events"></a>Input Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">blur</td>
+<td align="left">在 Input 失去焦点时触发</td>
+<td align="left">(event: Event)</td>
+</tr>
+<tr>
+<td align="left">focus</td>
+<td align="left">在 Input 获得焦点时触发</td>
+<td align="left">(event: Event)</td>
+</tr>
+<tr>
+<td align="left">input</td>
+<td align="left">在 Input 值改变时触发</td>
+<td align="left">(value: string | number)</td>
+</tr>
+<tr>
+<td align="left">clear</td>
+<td align="left">在点击由 clearable 属性生成的清空按钮时触发</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">change</td>
+<td align="left">仅在输入框失去焦点或用户按下回车时触发</td>
+<td align="left">(value: string | number)</td>
+</tr>
+</tbody></table>
+<h3 id="Input-Methods"><a href="#Input-Methods" class="headerlink" title="Input Methods"></a>Input Methods</h3><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">说明</th>
+<th align="left">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">focus</td>
+<td align="left">使 input 获取焦点</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">blur</td>
+<td align="left">使 input 失去焦点</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">select</td>
+<td align="left">选中 input 中的文字</td>
+<td align="left">—</td>
+</tr>
+</tbody></table>
+<h3 id="Autocomplete-Attributes"><a href="#Autocomplete-Attributes" class="headerlink" title="Autocomplete Attributes"></a>Autocomplete Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">placeholder</td>
+<td align="left">输入框占位文本</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">value-key</td>
+<td align="left">输入建议对象中用于显示的键名</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">value</td>
+</tr>
+<tr>
+<td align="left">value</td>
+<td align="left">必填值，输入绑定值</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">debounce</td>
+<td align="left">获取输入建议的去抖延时</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">300</td>
+</tr>
+<tr>
+<td align="left">placement</td>
+<td align="left">菜单弹出位置</td>
+<td align="left">string</td>
+<td align="left">top &#x2F; top-start &#x2F; top-end &#x2F; bottom &#x2F; bottom-start &#x2F; bottom-end</td>
+<td align="left">bottom-start</td>
+</tr>
+<tr>
+<td align="left">fetch-suggestions</td>
+<td align="left">返回输入建议的方法，仅当你的输入建议数据 resolve 时，通过调用 callback(data:[]) 来返回它</td>
+<td align="left">Function(queryString, callback)</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">popper-class</td>
+<td align="left">Autocomplete 下拉列表的类名</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">trigger-on-focus</td>
+<td align="left">是否在输入框 focus 时显示建议列表</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">select-when-unmatched</td>
+<td align="left">在输入没有任何匹配建议的情况下，按下回车是否触发 select事件</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">label</td>
+<td align="left">输入框关联的label文字</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">prefix-icon</td>
+<td align="left">输入框头部图标</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">suffix-icon</td>
+<td align="left">输入框尾部图标</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">hide-loading</td>
+<td align="left">是否隐藏远程加载时的加载图标</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">popper-append-to-body</td>
+<td align="left">是否将下拉列表插入至 body 元素。在下拉列表的定位出现问题时，可将该属性设置为 false</td>
+<td align="left">boolean</td>
+<td align="left">-</td>
+<td align="left">true</td>
+</tr>
+</tbody></table>
+<h3 id="Autocomplete-Slots"><a href="#Autocomplete-Slots" class="headerlink" title="Autocomplete Slots"></a>Autocomplete Slots</h3><table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">prefix</td>
+<td align="left">输入框头部内容</td>
+</tr>
+<tr>
+<td align="left">suffix</td>
+<td align="left">输入框尾部内容</td>
+</tr>
+<tr>
+<td align="left">prepend</td>
+<td align="left">输入框前置内容</td>
+</tr>
+<tr>
+<td align="left">append</td>
+<td align="left">输入框后置内容</td>
+</tr>
+</tbody></table>
+<h3 id="Autocomplete-Scoped-Slot"><a href="#Autocomplete-Scoped-Slot" class="headerlink" title="Autocomplete Scoped Slot"></a>Autocomplete Scoped Slot</h3><table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">—</td>
+<td align="left">自定义输入建议，参数为 { item }</td>
+</tr>
+</tbody></table>
+<h3 id="Autocomplete-Events"><a href="#Autocomplete-Events" class="headerlink" title="Autocomplete Events"></a>Autocomplete Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">select</td>
+<td align="left">点击选中建议项时触发</td>
+<td align="left">选中建议项</td>
+</tr>
+</tbody></table>
+<h3 id="Autocomplete-Methods"><a href="#Autocomplete-Methods" class="headerlink" title="Autocomplete Methods"></a>Autocomplete Methods</h3><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">说明</th>
+<th align="left">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">focus</td>
+<td align="left">使 input 获取焦点</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h1 id="InputNumber计数器"><a href="#InputNumber计数器" class="headerlink" title="InputNumber计数器"></a>InputNumber计数器</h1><p>仅允许输入标准的数字值，可定义范围</p>
+<h2 id="基础用法-3"><a href="#基础用法-3" class="headerlink" title="基础用法"></a>基础用法</h2><p>要使用它，只需要在<code>el-input-number</code>元素中使用<code>v-model</code>绑定变量即可，变量的初始值即为默认值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=&quot;v&quot;&gt;&lt;/el-input-number&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁用状态-3"><a href="#禁用状态-3" class="headerlink" title="禁用状态"></a>禁用状态</h2><p><code>disabled</code>属性接受一个<code>Boolean</code>，设置为<code>true</code>即可禁用整个组件，如果你只需要控制数值在某一范围内，可以设置<code>min</code>属性和<code>max</code>属性，不设置<code>min</code>和<code>max</code>时，最小值为 0。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=&quot;v&quot; min=&quot;0&quot; max=&quot;10&quot; :disabled=&quot;true&quot;&gt;&lt;/el-input-number&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="步数"><a href="#步数" class="headerlink" title="步数"></a>步数</h2><p>允许定义递增递减的步数控制</p>
+<p>设置<code>step</code>属性可以控制步长，接受一个<code>Number</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=&quot;v&quot; min=&quot;0&quot; max=&quot;10&quot; step=&quot;2&quot;&gt;&lt;/el-input-number&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="精度"><a href="#精度" class="headerlink" title="精度"></a>精度</h2><p>设置 <code>precision</code> 属性可以控制数值精度，接收一个 <code>Number</code>。</p>
+<p><code>precision</code> 的值必须是一个非负整数，并且不能小于 <code>step</code> 的小数位数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=&quot;v&quot; min=&quot;0&quot; max=&quot;10&quot; step=&quot;0.1&quot; precision=&quot;2&quot;&gt;&lt;/el-input-number&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="尺寸-1"><a href="#尺寸-1" class="headerlink" title="尺寸"></a>尺寸</h2><p>额外提供了 <code>medium</code>、<code>small</code>、<code>mini</code> 三种尺寸的数字输入框</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=&quot;v&quot; size=&quot;mini&quot;&gt;&lt;/el-input-number&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按钮位置"><a href="#按钮位置" class="headerlink" title="按钮位置"></a>按钮位置</h2><p>设置 <code>controls-position</code> 属性可以控制按钮位置。</p>
+<p>按钮上下分布且都在右侧</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-input-number v-model=&quot;v&quot; size=&quot;mini&quot; controls-position=&quot;right&quot;&gt;&lt;/el-input-number&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结-6"><a href="#总结-6" class="headerlink" title="总结"></a>总结</h2><h3 id="Attributes-1"><a href="#Attributes-1" class="headerlink" title="Attributes"></a>Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">value</td>
+<td align="left">绑定值</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">min</td>
+<td align="left">设置计数器允许的最小值</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">-Infinity</td>
+</tr>
+<tr>
+<td align="left">max</td>
+<td align="left">设置计数器允许的最大值</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">Infinity</td>
+</tr>
+<tr>
+<td align="left">step</td>
+<td align="left">计数器步长</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">precision</td>
+<td align="left">数值精度</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">计数器尺寸</td>
+<td align="left">string</td>
+<td align="left">medium, small,mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用计数器</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">controls</td>
+<td align="left">是否使用控制按钮</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">controls-position</td>
+<td align="left">控制按钮位置</td>
+<td align="left">string</td>
+<td align="left">right</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">原生属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">label</td>
+<td align="left">输入框关联的label文字</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+</tbody></table>
+<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">change</td>
+<td align="left">绑定值被改变时触发</td>
+<td align="left">最后变更的值</td>
+</tr>
+<tr>
+<td align="left">blur</td>
+<td align="left">在组件 Input 失去焦点时触发</td>
+<td align="left">(event: Event)</td>
+</tr>
+<tr>
+<td align="left">focus</td>
+<td align="left">在组件 Input 获得焦点时触发</td>
+<td align="left">(event: Event)</td>
+</tr>
+</tbody></table>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">说明</th>
+<th align="left">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">focus</td>
+<td align="left">使 input 获取焦点</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+<h1 id="Select选择器"><a href="#Select选择器" class="headerlink" title="Select选择器"></a>Select选择器</h1><p>当选项过多时，使用下拉菜单展示并选择内容。</p>
+<h2 id="基础用法-4"><a href="#基础用法-4" class="headerlink" title="基础用法"></a>基础用法</h2><p>适用广泛的基础单选</p>
+<p><code>v-model</code>的值为当前被选中的<code>el-option</code>的 value 属性值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot;&gt;  </span><br><span class="line">  &lt;el-option v-for=&quot;item in st&quot;  </span><br><span class="line">  :key=&quot;item.address&quot;  </span><br><span class="line">  :label=&quot;item.value&quot;  展示内容</span><br><span class="line">  :value=&quot;item.address&quot;&gt;  </span><br><span class="line">  &lt;/el-option&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br><span class="line"></span><br><span class="line">data() &#123;  </span><br><span class="line">  return &#123;  </span><br><span class="line">    st: [],  </span><br><span class="line">    v: &#x27;&#x27;  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="禁用"><a href="#禁用" class="headerlink" title="禁用"></a>禁用</h2><h3 id="选项禁用"><a href="#选项禁用" class="headerlink" title="选项禁用"></a>选项禁用</h3><p>在<code>el-option</code>中，设定<code>disabled</code>值为 true，即可禁用该选项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot;&gt;  </span><br><span class="line">  &lt;el-option v-for=&quot;item in st&quot;  </span><br><span class="line">  :key=&quot;item.address&quot;  </span><br><span class="line">  :label=&quot;item.value&quot;  </span><br><span class="line">  :value=&quot;item.address&quot;  </span><br><span class="line">  :disabled=&quot;item.disabled&quot;  </span><br><span class="line">  &gt;  </span><br><span class="line">  &lt;/el-option&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br></pre></td></tr></table></figure>
+
+<p>不要调用函数，否则结果只是显示不可选，但是点击可选。</p>
+<h3 id="全部禁用"><a href="#全部禁用" class="headerlink" title="全部禁用"></a>全部禁用</h3><p>选择器不可用状态</p>
+<p>为<code>el-select</code>设置<code>disabled</code>属性，则整个选择器不可用</p>
+<h2 id="可清空单选"><a href="#可清空单选" class="headerlink" title="可清空单选"></a>可清空单选</h2><p>包含清空按钮，可将选择器清空为初始状态</p>
+<p>为<code>el-select</code>设置<code>clearable</code>属性，则可将选择器清空。需要注意的是，<code>clearable</code>属性仅适用于单选。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot; clearable&gt;  </span><br><span class="line">  &lt;el-option v-for=&quot;item in st&quot;  </span><br><span class="line">  :key=&quot;item.address&quot;  </span><br><span class="line">  :label=&quot;item.value&quot;  </span><br><span class="line">  :value=&quot;item.address&quot;  </span><br><span class="line">  :disabled=&quot;item.disabled&quot;  </span><br><span class="line">  &gt;  </span><br><span class="line">  &lt;/el-option&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础多选"><a href="#基础多选" class="headerlink" title="基础多选"></a>基础多选</h2><p>适用性较广的基础多选，用 Tag 展示已选项</p>
+<p>为<code>el-select</code>设置<code>multiple</code>属性即可启用多选，此时<code>v-model</code>的值为当前选中值所组成的数组。默认情况下选中值会以 Tag 的形式展现，你也可以设置<code>collapse-tags</code>属性将它们合并为一段文字。</p>
+<p><code>collapse-tags</code>属性设置后只会显示<strong>第一个</strong>属性,其余的则是<code>+n</code>标签,代表一共选了几个</p>
+<p><img src="https://raw.githubusercontent.com/2768085634/pic/main/202210172043734.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot; clearable multiple collapse-tags&gt;  </span><br><span class="line">  &lt;el-option v-for=&quot;item in st&quot;  </span><br><span class="line">  :key=&quot;item.address&quot;  </span><br><span class="line">  :label=&quot;item.value&quot;  </span><br><span class="line">  :value=&quot;item.address&quot;  </span><br><span class="line">  :disabled=&quot;item.disabled&quot;  </span><br><span class="line">  &gt;  </span><br><span class="line">  &lt;/el-option&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h2><p>可以自定义备选项</p>
+<p>将自定义的 HTML 模板插入<code>el-option</code>的 slot 中即可。</p>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>备选项进行分组展示</p>
+<p>使用<code>el-option-group</code>对备选项进行分组，它的<code>label</code>属性为分组名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot; multiple collapse-tags&gt;  </span><br><span class="line">  &lt;el-option-group v-for=&quot;group in options3&quot;  </span><br><span class="line">                   :key=&quot;group.label&quot;  </span><br><span class="line">                   :label=&quot;group.label&quot;&gt;  </span><br><span class="line">    &lt;el-option v-for=&quot;item in group.options&quot;  </span><br><span class="line">               :key=&quot;item.value&quot;  </span><br><span class="line">               :label=&quot;item.label&quot;  </span><br><span class="line">               :value=&quot;item.value&quot;  </span><br><span class="line">    &gt;  </span><br><span class="line">    &lt;/el-option&gt;  </span><br><span class="line">  &lt;/el-option-group&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br><span class="line"></span><br><span class="line">v: &#x27;&#x27;,  </span><br><span class="line">options3: [&#123;  </span><br><span class="line">  label: &#x27;热门城市&#x27;,  </span><br><span class="line">  options: [&#123;  </span><br><span class="line">    value: &#x27;Shanghai&#x27;,  </span><br><span class="line">    label: &#x27;上海&#x27;  </span><br><span class="line">  &#125;, &#123;  </span><br><span class="line">    value: &#x27;Beijing&#x27;,  </span><br><span class="line">    label: &#x27;北京&#x27;  </span><br><span class="line">  &#125;]  </span><br><span class="line">&#125;, &#123;  </span><br><span class="line">  label: &#x27;城市名&#x27;,  </span><br><span class="line">  options: [&#123;  </span><br><span class="line">    value: &#x27;Chengdu&#x27;,  </span><br><span class="line">    label: &#x27;成都&#x27;  </span><br><span class="line">  &#125;, &#123;  </span><br><span class="line">    value: &#x27;Shenzhen&#x27;,  </span><br><span class="line">    label: &#x27;深圳&#x27;  </span><br><span class="line">  &#125;, &#123;  </span><br><span class="line">    value: &#x27;Guangzhou&#x27;,  </span><br><span class="line">    label: &#x27;广州&#x27;  </span><br><span class="line">  &#125;, &#123;  </span><br><span class="line">    value: &#x27;Dalian&#x27;,  </span><br><span class="line">    label: &#x27;大连&#x27;  </span><br><span class="line">  &#125;]  </span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="可搜索"><a href="#可搜索" class="headerlink" title="可搜索"></a>可搜索</h2><p>可以利用搜索功能快速查找选项</p>
+<p>为<code>el-select</code>添加<code>filterable</code>属性即可启用搜索功能。默认情况下，Select 会找出所有<code>label</code>属性包含输入值的选项。如果希望使用其他的搜索逻辑，可以通过传入一个<code>filter-method</code>来实现。<code>filter-method</code>为一个<code>Function</code>，它会在输入值发生变化时调用，参数为当前输入值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot; multiple collapse-tags filterable&gt;  </span><br><span class="line">  &lt;el-option-group v-for=&quot;group in options3&quot;  </span><br><span class="line">                   :key=&quot;group.label&quot;  </span><br><span class="line">                   :label=&quot;group.label&quot;&gt;  </span><br><span class="line">    &lt;el-option v-for=&quot;item in group.options&quot;  </span><br><span class="line">               :key=&quot;item.value&quot;  </span><br><span class="line">               :label=&quot;item.label&quot;  </span><br><span class="line">               :value=&quot;item.value&quot;  </span><br><span class="line">    &gt;  </span><br><span class="line">    &lt;/el-option&gt;  </span><br><span class="line">  &lt;/el-option-group&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建条目"><a href="#创建条目" class="headerlink" title="创建条目"></a>创建条目</h2><p>可以创建并选中选项中不存在的条目</p>
+<p>使用<code>allow-create</code>属性即可通过在输入框中输入文字来创建新的条目。注意此时<code>filterable</code>必须为真。本例还使用了<code>default-first-option</code>属性，在该属性打开的情况下，按下回车就可以选中当前选项列表中的第一个选项，无需使用鼠标或键盘方向键进行定位。</p>
+<p>如果 Select 的绑定值为对象类型，请务必指定 <code>value-key</code> 作为它的唯一性标识。</p>
+<p><img src="https://raw.githubusercontent.com/2768085634/pic/main/202210172103102.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-select v-model=&quot;v&quot; multiple collapse-tags filterable default-first-option allow-create&gt;  </span><br><span class="line">  &lt;el-option-group v-for=&quot;group in options3&quot;  </span><br><span class="line">                   :key=&quot;group.label&quot;  </span><br><span class="line">                   :label=&quot;group.label&quot;&gt;  </span><br><span class="line">    &lt;el-option v-for=&quot;item in group.options&quot;  </span><br><span class="line">               :key=&quot;item.value&quot;  </span><br><span class="line">               :label=&quot;item.label&quot;  </span><br><span class="line">               :value=&quot;item.value&quot;  </span><br><span class="line">    &gt;  </span><br><span class="line">    &lt;/el-option&gt;  </span><br><span class="line">  &lt;/el-option-group&gt;  </span><br><span class="line">&lt;/el-select&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结-7"><a href="#总结-7" class="headerlink" title="总结"></a>总结</h2><h3 id="Select-Attributes"><a href="#Select-Attributes" class="headerlink" title="Select Attributes"></a>Select Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">multiple</td>
+<td align="left">是否多选</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">value-key</td>
+<td align="left">作为 value 唯一标识的键名，绑定值为对象类型时必填</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">value</td>
+</tr>
+<tr>
+<td align="left">size</td>
+<td align="left">输入框尺寸</td>
+<td align="left">string</td>
+<td align="left">medium&#x2F;small&#x2F;mini</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">clearable</td>
+<td align="left">单选时是否可以清空选项</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">collapse-tags</td>
+<td align="left">多选时是否将选中值按文字的形式展示</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">multiple-limit</td>
+<td align="left">多选时用户最多可以选择的项目数，为 0 则不限制</td>
+<td align="left">number</td>
+<td align="left">—</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">select input 的 name 属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">auto-complete</td>
+<td align="left">select input 的 autocomplete 属性</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">off</td>
+</tr>
+<tr>
+<td align="left">placeholder</td>
+<td align="left">占位符</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">请选择</td>
+</tr>
+<tr>
+<td align="left">filterable</td>
+<td align="left">是否可搜索</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">allow-create</td>
+<td align="left">是否允许用户创建新条目，需配合 filterable 使用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">filter-method</td>
+<td align="left">自定义搜索方法</td>
+<td align="left">function</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">remote</td>
+<td align="left">是否为远程搜索</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">remote-method</td>
+<td align="left">远程搜索方法</td>
+<td align="left">function</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">loading</td>
+<td align="left">是否正在从远程获取数据</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">loading-text</td>
+<td align="left">远程加载时显示的文字</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">加载中</td>
+</tr>
+<tr>
+<td align="left">no-match-text</td>
+<td align="left">搜索条件无匹配时显示的文字</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">无匹配数据</td>
+</tr>
+<tr>
+<td align="left">no-data-text</td>
+<td align="left">选项为空时显示的文字</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">无数据</td>
+</tr>
+<tr>
+<td align="left">popper-class</td>
+<td align="left">Select 下拉框的类名</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">reserve-keyword</td>
+<td align="left">多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">default-first-option</td>
+<td align="left">在输入框按下回车，选择第一个匹配项。需配合 filterable 或 remote 使用</td>
+<td align="left">boolean</td>
+<td align="left">-</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">popper-append-to-body</td>
+<td align="left">是否将弹出框插入至 body 元素。在弹出框的定位出现问题时，可将该属性设置为 false</td>
+<td align="left">boolean</td>
+<td align="left">-</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">automatic-dropdown</td>
+<td align="left">对于不可搜索的 Select，是否在输入框获得焦点后自动弹出选项菜单</td>
+<td align="left">boolean</td>
+<td align="left">-</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h3 id="Select-Events"><a href="#Select-Events" class="headerlink" title="Select Events"></a>Select Events</h3><table>
+<thead>
+<tr>
+<th align="left">事件名称</th>
+<th align="left">说明</th>
+<th align="left">回调参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">change</td>
+<td align="left">选中值发生变化时触发</td>
+<td align="left">目前的选中值</td>
+</tr>
+<tr>
+<td align="left">visible-change</td>
+<td align="left">下拉框出现&#x2F;隐藏时触发</td>
+<td align="left">出现则为 true，隐藏则为 false</td>
+</tr>
+<tr>
+<td align="left">remove-tag</td>
+<td align="left">多选模式下移除tag时触发</td>
+<td align="left">移除的tag值</td>
+</tr>
+<tr>
+<td align="left">clear</td>
+<td align="left">可清空的单选模式下用户点击清空按钮时触发</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">blur</td>
+<td align="left">当 input 失去焦点时触发</td>
+<td align="left">(event: Event)</td>
+</tr>
+<tr>
+<td align="left">focus</td>
+<td align="left">当 input 获得焦点时触发</td>
+<td align="left">(event: Event)</td>
+</tr>
+</tbody></table>
+<h3 id="Select-Slots"><a href="#Select-Slots" class="headerlink" title="Select Slots"></a>Select Slots</h3><table>
+<thead>
+<tr>
+<th align="left">name</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">—</td>
+<td align="left">Option 组件列表</td>
+</tr>
+<tr>
+<td align="left">prefix</td>
+<td align="left">Select 组件头部内容</td>
+</tr>
+</tbody></table>
+<h3 id="Option-Group-Attributes"><a href="#Option-Group-Attributes" class="headerlink" title="Option Group Attributes"></a>Option Group Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">label</td>
+<td align="left">分组的组名</td>
+<td align="left">string</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否将该分组下所有选项置为禁用</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h3 id="Option-Attributes"><a href="#Option-Attributes" class="headerlink" title="Option Attributes"></a>Option Attributes</h3><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+<th align="left">类型</th>
+<th align="left">可选值</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">value</td>
+<td align="left">选项的值</td>
+<td align="left">string&#x2F;number&#x2F;object</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">label</td>
+<td align="left">选项的标签，若不设置则默认与 value 相同</td>
+<td align="left">string&#x2F;number</td>
+<td align="left">—</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">disabled</td>
+<td align="left">是否禁用该选项</td>
+<td align="left">boolean</td>
+<td align="left">—</td>
+<td align="left">false</td>
+</tr>
+</tbody></table>
+<h3 id="Methods-1"><a href="#Methods-1" class="headerlink" title="Methods"></a>Methods</h3><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">说明</th>
+<th align="left">参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">focus</td>
+<td align="left">使 input 获取焦点</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">blur</td>
+<td align="left">使 input 失去焦点，并隐藏下拉框</td>
+<td align="left">-</td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://2768085634.github.io">haog</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://2768085634.github.io/2022/12/10/%E7%AC%94%E8%AE%B0/element-ui/">https://2768085634.github.io/2022/12/10/%E7%AC%94%E8%AE%B0/element-ui/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://2768085634.github.io" target="_blank">Haog's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vue/">vue</a></div><div class="post_share"><div class="social-share" data-image="/./img/4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/./img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/./img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/./img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/12/10/%E7%AC%94%E8%AE%B0/element-ui%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"><img class="prev-cover" src="/./img/2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">element-ui开发常见问题</div></div></a></div><div class="next-post pull-right"><a href="/2022/12/10/%E7%AC%94%E8%AE%B0/css/"><img class="next-cover" src="/./img/amy.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">css</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/12/10/%E7%AC%94%E8%AE%B0/Vue/" title="Vue"><img class="cover" src="/./img/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-10</div><div class="title">Vue</div></div></a></div><div><a href="/2022/12/10/%E7%AC%94%E8%AE%B0/Vue%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Vue开发过程常见问题"><img class="cover" src="/./img/amy.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-10</div><div class="title">Vue开发过程常见问题</div></div></a></div><div><a href="/2022/12/10/%E7%AC%94%E8%AE%B0/element-ui%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="element-ui开发常见问题"><img class="cover" src="/./img/2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-10</div><div class="title">element-ui开发常见问题</div></div></a></div><div><a href="/2022/12/10/%E7%AC%94%E8%AE%B0/token%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81/" title="token登录验证"><img class="cover" src="/./img/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-10</div><div class="title">token登录验证</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">haog</div><div class="author-info__description">To err is human, to forgive, divine.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/2768085634"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/2768085634" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2768085634@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">转载请注明出处</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Layout%E5%B8%83%E5%B1%80"><span class="toc-number">1.</span> <span class="toc-text">Layout布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B8%83%E5%B1%80"><span class="toc-number">1.1.</span> <span class="toc-text">基础布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%A0%8F%E9%97%B4%E9%9A%94"><span class="toc-number">1.2.</span> <span class="toc-text">分栏间隔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%A0%8F%E5%81%8F%E7%A7%BB"><span class="toc-number">1.3.</span> <span class="toc-text">分栏偏移</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%85%B6%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">对其方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="toc-number">1.5.</span> <span class="toc-text">响应式布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%96%AD%E7%82%B9%E7%9A%84%E9%9A%90%E8%97%8F%E7%B1%BB"><span class="toc-number">1.5.1.</span> <span class="toc-text">基于断点的隐藏类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Row-Attributes"><span class="toc-number">1.6.1.</span> <span class="toc-text">Row Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Col-Attributes"><span class="toc-number">1.6.2.</span> <span class="toc-text">Col Attributes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Container%E5%B8%83%E5%B1%80%E5%AE%B9%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">Container布局容器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">2.1.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-Attributes"><span class="toc-number">2.1.1.</span> <span class="toc-text">Container Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Header-Attributes"><span class="toc-number">2.1.2.</span> <span class="toc-text">Header Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aside-Attributes"><span class="toc-number">2.1.3.</span> <span class="toc-text">Aside Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Footer-Attributes"><span class="toc-number">2.1.4.</span> <span class="toc-text">Footer Attributes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Color%E8%89%B2%E5%BD%A9"><span class="toc-number">3.</span> <span class="toc-text">Color色彩</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Typography%E5%AD%97%E4%BD%93"><span class="toc-number">4.</span> <span class="toc-text">Typography字体</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E5%AD%97%E4%BD%93"><span class="toc-number">4.1.</span> <span class="toc-text">引入字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="toc-number">4.2.</span> <span class="toc-text">字体使用规范</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Icon%E5%9B%BE%E6%A0%87"><span class="toc-number">5.</span> <span class="toc-text">Icon图标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Button%E6%8C%89%E9%92%AE"><span class="toc-number">6.</span> <span class="toc-text">Button按钮</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E6%A0%B7%E5%BC%8F%E6%8C%89%E9%92%AE"><span class="toc-number">6.1.</span> <span class="toc-text">默认样式按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B%E6%8C%89%E9%92%AE"><span class="toc-number">6.2.</span> <span class="toc-text">简介按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%86%E8%A7%92%E6%8C%89%E9%92%AE"><span class="toc-number">6.3.</span> <span class="toc-text">圆角按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87%E6%8C%89%E9%92%AE"><span class="toc-number">6.4.</span> <span class="toc-text">图标按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E7%94%A8%E6%8C%89%E9%92%AE"><span class="toc-number">6.5.</span> <span class="toc-text">禁用按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%8C%89%E9%92%AE"><span class="toc-number">6.6.</span> <span class="toc-text">文字按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E7%BB%84"><span class="toc-number">6.7.</span> <span class="toc-text">按钮组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E4%B8%AD"><span class="toc-number">6.8.</span> <span class="toc-text">加载中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%B0%BA%E5%AF%B8"><span class="toc-number">6.9.</span> <span class="toc-text">不同尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-2"><span class="toc-number">6.10.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Attributes"><span class="toc-number">6.10.1.</span> <span class="toc-text">Attributes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Radio%E5%8D%95%E9%80%89%E6%A1%86"><span class="toc-number">7.</span> <span class="toc-text">Radio单选框</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span class="toc-number">7.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E7%94%A8%E7%8A%B6%E6%80%81"><span class="toc-number">7.2.</span> <span class="toc-text">禁用状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E9%80%89%E6%A1%86%E7%BB%84"><span class="toc-number">7.3.</span> <span class="toc-text">单选框组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E6%A0%B7%E5%BC%8F"><span class="toc-number">7.4.</span> <span class="toc-text">按钮样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E6%A1%86"><span class="toc-number">7.5.</span> <span class="toc-text">边框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-3"><span class="toc-number">7.6.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Radio-Attributes"><span class="toc-number">7.6.1.</span> <span class="toc-text">Radio Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Radio-Events"><span class="toc-number">7.6.2.</span> <span class="toc-text">Radio Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Radio-group-Attributes"><span class="toc-number">7.6.3.</span> <span class="toc-text">Radio-group Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Radio-group-Events"><span class="toc-number">7.6.4.</span> <span class="toc-text">Radio-group Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Radio-button-Attributes"><span class="toc-number">7.6.5.</span> <span class="toc-text">Radio-button Attributes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Checkbox%E5%A4%9A%E9%80%89%E6%A1%86"><span class="toc-number">8.</span> <span class="toc-text">Checkbox多选框</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95-1"><span class="toc-number">8.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E7%94%A8%E7%8A%B6%E6%80%81-1"><span class="toc-number">8.2.</span> <span class="toc-text">禁用状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E9%80%89%E6%A1%86%E7%BB%84"><span class="toc-number">8.3.</span> <span class="toc-text">多选框组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#indeterminate-%E7%8A%B6%E6%80%81"><span class="toc-number">8.4.</span> <span class="toc-text">indeterminate 状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E9%80%89%E9%A1%B9%E7%9B%AE%E6%95%B0%E9%87%8F%E7%9A%84%E9%99%90%E5%88%B6"><span class="toc-number">8.5.</span> <span class="toc-text">可选项目数量的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E6%A0%B7%E5%BC%8F-1"><span class="toc-number">8.6.</span> <span class="toc-text">按钮样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E6%A1%86-1"><span class="toc-number">8.7.</span> <span class="toc-text">边框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-4"><span class="toc-number">8.8.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Checkbox-Attributes"><span class="toc-number">8.8.1.</span> <span class="toc-text">Checkbox Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Checkbox-Events"><span class="toc-number">8.8.2.</span> <span class="toc-text">Checkbox Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Checkbox-group-Attributes"><span class="toc-number">8.8.3.</span> <span class="toc-text">Checkbox-group Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Checkbox-group-Events"><span class="toc-number">8.8.4.</span> <span class="toc-text">Checkbox-group Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Checkbox-button-Attributes"><span class="toc-number">8.8.5.</span> <span class="toc-text">Checkbox-button Attributes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input%E8%BE%93%E5%85%A5%E6%A1%86"><span class="toc-number">9.</span> <span class="toc-text">Input输入框</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95-2"><span class="toc-number">9.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E7%94%A8%E7%8A%B6%E6%80%81-2"><span class="toc-number">9.2.</span> <span class="toc-text">禁用状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E6%B8%85%E7%A9%BA"><span class="toc-number">9.3.</span> <span class="toc-text">可清空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6-icon-%E7%9A%84%E8%BE%93%E5%85%A5%E6%A1%86"><span class="toc-number">9.4.</span> <span class="toc-text">带 icon 的输入框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%9F%9F"><span class="toc-number">9.5.</span> <span class="toc-text">文本域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%87%AA%E9%80%82%E5%BA%94%E6%96%87%E6%9C%AC%E9%AB%98%E5%BA%A6%E7%9A%84%E6%96%87%E6%9C%AC%E5%9F%9F"><span class="toc-number">9.5.1.</span> <span class="toc-text">可自适应文本高度的文本域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%90%88%E5%9E%8B%E8%BE%93%E5%85%A5%E6%A1%86"><span class="toc-number">9.6.</span> <span class="toc-text">复合型输入框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BA%E5%AF%B8"><span class="toc-number">9.7.</span> <span class="toc-text">尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E8%BE%93%E5%85%A5%E5%BB%BA%E8%AE%AE"><span class="toc-number">9.8.</span> <span class="toc-text">带输入建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E5%BB%BA%E8%AE%AE%E6%A8%A1%E6%9D%BF"><span class="toc-number">9.9.</span> <span class="toc-text">自定义输入建议模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-5"><span class="toc-number">9.10.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Attributes"><span class="toc-number">9.10.1.</span> <span class="toc-text">Input Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Slots"><span class="toc-number">9.10.2.</span> <span class="toc-text">Input Slots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Events"><span class="toc-number">9.10.3.</span> <span class="toc-text">Input Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Methods"><span class="toc-number">9.10.4.</span> <span class="toc-text">Input Methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autocomplete-Attributes"><span class="toc-number">9.10.5.</span> <span class="toc-text">Autocomplete Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autocomplete-Slots"><span class="toc-number">9.10.6.</span> <span class="toc-text">Autocomplete Slots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autocomplete-Scoped-Slot"><span class="toc-number">9.10.7.</span> <span class="toc-text">Autocomplete Scoped Slot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autocomplete-Events"><span class="toc-number">9.10.8.</span> <span class="toc-text">Autocomplete Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autocomplete-Methods"><span class="toc-number">9.10.9.</span> <span class="toc-text">Autocomplete Methods</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#InputNumber%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="toc-number">10.</span> <span class="toc-text">InputNumber计数器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95-3"><span class="toc-number">10.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E7%94%A8%E7%8A%B6%E6%80%81-3"><span class="toc-number">10.2.</span> <span class="toc-text">禁用状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A5%E6%95%B0"><span class="toc-number">10.3.</span> <span class="toc-text">步数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E5%BA%A6"><span class="toc-number">10.4.</span> <span class="toc-text">精度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BA%E5%AF%B8-1"><span class="toc-number">10.5.</span> <span class="toc-text">尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E4%BD%8D%E7%BD%AE"><span class="toc-number">10.6.</span> <span class="toc-text">按钮位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-6"><span class="toc-number">10.7.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Attributes-1"><span class="toc-number">10.7.1.</span> <span class="toc-text">Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Events"><span class="toc-number">10.7.2.</span> <span class="toc-text">Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Methods"><span class="toc-number">10.7.3.</span> <span class="toc-text">Methods</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Select%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">11.</span> <span class="toc-text">Select选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95-4"><span class="toc-number">11.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A6%81%E7%94%A8"><span class="toc-number">11.2.</span> <span class="toc-text">禁用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E9%A1%B9%E7%A6%81%E7%94%A8"><span class="toc-number">11.2.1.</span> <span class="toc-text">选项禁用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E7%A6%81%E7%94%A8"><span class="toc-number">11.2.2.</span> <span class="toc-text">全部禁用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E6%B8%85%E7%A9%BA%E5%8D%95%E9%80%89"><span class="toc-number">11.3.</span> <span class="toc-text">可清空单选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%A4%9A%E9%80%89"><span class="toc-number">11.4.</span> <span class="toc-text">基础多选</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF"><span class="toc-number">11.5.</span> <span class="toc-text">自定义模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84"><span class="toc-number">11.6.</span> <span class="toc-text">分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E6%90%9C%E7%B4%A2"><span class="toc-number">11.7.</span> <span class="toc-text">可搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%9D%A1%E7%9B%AE"><span class="toc-number">11.8.</span> <span class="toc-text">创建条目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-7"><span class="toc-number">11.9.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Select-Attributes"><span class="toc-number">11.9.1.</span> <span class="toc-text">Select Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Select-Events"><span class="toc-number">11.9.2.</span> <span class="toc-text">Select Events</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Select-Slots"><span class="toc-number">11.9.3.</span> <span class="toc-text">Select Slots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Option-Group-Attributes"><span class="toc-number">11.9.4.</span> <span class="toc-text">Option Group Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Option-Attributes"><span class="toc-number">11.9.5.</span> <span class="toc-text">Option Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Methods-1"><span class="toc-number">11.9.6.</span> <span class="toc-text">Methods</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/10/python/python%E6%8E%A7%E5%88%B6excel/" title="python控制excel"><img src="/./img/3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="python控制excel"/></a><div class="content"><a class="title" href="/2022/12/10/python/python%E6%8E%A7%E5%88%B6excel/" title="python控制excel">python控制excel</a><time datetime="2022-12-09T19:01:30.000Z" title="发表于 2022-12-10 03:01:30">2022-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/10/python/md5/" title="md5"><img src="/./img/100857885_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="md5"/></a><div class="content"><a class="title" href="/2022/12/10/python/md5/" title="md5">md5</a><time datetime="2022-12-09T19:01:23.000Z" title="发表于 2022-12-10 03:01:23">2022-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/10/python/%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%84%E7%90%86/" title="文件夹处理"><img src="/./img/Cache_26abc08c2796ffed..jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文件夹处理"/></a><div class="content"><a class="title" href="/2022/12/10/python/%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%84%E7%90%86/" title="文件夹处理">文件夹处理</a><time datetime="2022-12-09T19:01:03.000Z" title="发表于 2022-12-10 03:01:03">2022-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/10/python/%E7%88%AC%E8%99%AB(selenium)/" title="爬虫(selenium)"><img src="/./img/2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爬虫(selenium)"/></a><div class="content"><a class="title" href="/2022/12/10/python/%E7%88%AC%E8%99%AB(selenium)/" title="爬虫(selenium)">爬虫(selenium)</a><time datetime="2022-12-09T19:00:55.000Z" title="发表于 2022-12-10 03:00:55">2022-12-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/10/python/%E7%88%AC%E8%99%AB/" title="爬虫"><img src="/./img/100857885_p0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="爬虫"/></a><div class="content"><a class="title" href="/2022/12/10/python/%E7%88%AC%E8%99%AB/" title="爬虫">爬虫</a><time datetime="2022-12-09T19:00:37.000Z" title="发表于 2022-12-10 03:00:37">2022-12-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By haog</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">一个人安安静静地摸鱼</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
