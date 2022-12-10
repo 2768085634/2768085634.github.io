@@ -138,6 +138,9 @@
 }
 
 /* 首页文章栏背景透明 */
+#page,
+#archive,
+#post,
 #recent-posts>.recent-post-item,.layout_page>div:first-child:not(.recent-posts),.layout_post>#page,.layout_post>#post,.read-mode .layout_post>#post {
     /*background: var(--light_bg_color)*/
     opacity: 0.9;
@@ -149,6 +152,47 @@
     opacity: 0.9;
 }
 
+/* 主页顶部图 */
 #page-header:not(.not-top-img):before {
     background: rgba(0,0,0,0);
 }
+
+/* 主页顶部导航栏文字 */
+
+#site-name,
+.site-page {
+    color: lightpink !important;
+}
+
+/* 主页顶部博客名字 */
+#site-title {
+    color: black !important;
+}
+
+/* 主页展示语 */
+#site-subtitle {
+    color: deepskyblue !important;
+}
+
+/* 页脚透明 */
+#footer{
+    background: transparent !important;
+}
+
+/* 文章页面标题变色 */
+.post-title {
+    color: black !important;
+    font-weight: bold !important;
+}
+
+/* 文章页面信息变色 */
+.meta-firstline,
+.post-meta-categories {
+    color: pink !important;
+    font-size: medium;
+}
+
+/*!* 文章界面顶部图片颜色 *!*/
+/*#page-header.post-bg:before {*/
+/*    background: rgba(0, 0, 0, 0.05) !important;*/
+/*}*/
