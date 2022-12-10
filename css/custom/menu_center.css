@@ -148,3 +148,7 @@
     /*background: var(--light_bg_color)*/
     opacity: 0.9;
 }
+
+#page-header:not(.not-top-img):before {
+    background: rgba(0,0,0,0);
+}
