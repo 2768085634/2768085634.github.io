@@ -306,3 +306,9 @@ hr:before {
 .pagination > .current:hover {
     background: pink !important;
 }
+
+
+/* 打赏 */
+.reward-button:hover {
+    background: pink !important;
+}
