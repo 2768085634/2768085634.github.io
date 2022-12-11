@@ -264,7 +264,9 @@ hr:before {
 /* 侧边功能(设置/评论区/回到顶部) */
 #rightside_config,
 #go-up,
-#to_comment {
+#to_comment,
+#translateLink,
+#hide-aside-btn {
     transition: 0.3s;
     background: pink !important;
 }
@@ -272,7 +274,9 @@ hr:before {
 /* github/mail等图标 */
 #rightside_config:hover,
 #go-up:hover,
-#to_comment:hover {
+#to_comment:hover,
+#translateLink:hover,
+#hide-aside-btn:hover {
     background: deepskyblue !important;
 }
 
