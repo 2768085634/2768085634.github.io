@@ -213,3 +213,64 @@
 hr:before {
     color: pink !important;
 }
+
+/* 单选文章切换(没有上/下篇文章) */
+.pull-full > a {
+    border-radius: 10px !important;
+    background:black !important;
+}
+
+/* 下切换文章 */
+.pull-left > a {
+    border-radius: 10px !important;
+    background:black !important;
+    box-sizing: border-box !important;
+    border: 3px solid deepskyblue !important;
+}
+
+/* 下切换文章 */
+.pull-right > a {
+    border-radius: 10px !important;
+    background:black !important;
+    box-sizing: border-box !important;
+    border: 3px solid pink !important;
+}
+
+/* 文章上切换 */
+.pull-left > a > .pagination-info >.label {
+    color: deepskyblue !important;
+}
+
+/* 文章下切换 */
+.pull-right > a > .pagination-info >.label {
+    color: pink !important;
+}
+
+/* 上切换目标文章标题 */
+.pull-right > a > .pagination-info > .prev_info {
+    color: deepskyblue !important;
+}
+
+/* 下切换目标文章标题 */
+.pull-right > a > .pagination-info > .next_info {
+    color: pink !important;
+}
+
+/* 切换上下文章背景色 */
+#pagination {
+    background:rgba(0, 0, 0, 0) !important;
+}
+
+/* 侧边功能(设置/评论区/回到顶部) */
+#rightside_config,
+#go-up,
+#to_comment {
+    transition: 0.3s;
+    background: pink !important;
+}
+
+#rightside_config:hover,
+#go-up:hover,
+#to_comment:hover {
+    background: deepskyblue !important;
+}
