@@ -269,8 +269,40 @@ hr:before {
     background: pink !important;
 }
 
+/* github/mail等图标 */
 #rightside_config:hover,
 #go-up:hover,
 #to_comment:hover {
     background: deepskyblue !important;
+}
+
+.fa-envelope:before,
+.fa-github:before {
+    color: pink !important;
+}
+
+/* "关注我" */
+#card-info-btn {
+    background: deepskyblue !important;
+    color: white !important;
+}
+
+#card-info-btn:hover {
+    background: #FFFFD0 !important;
+    color: pink !important;
+}
+
+/* 鼠标移动至切换标签/选页 */
+.pagination > .page-number:hover,
+.pagination > .extend:hover {
+    background: deepskyblue !important;
+}
+
+/* 当前是第几页 */
+.pagination > .current {
+    background: pink !important;
+}
+
+.pagination > .current:hover {
+    background: pink !important;
 }
