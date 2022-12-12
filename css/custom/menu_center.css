@@ -247,7 +247,7 @@ hr:before {
 }
 
 /* 上切换目标文章标题 */
-.pull-right > a > .pagination-info > .prev_info {
+.pull-left > a > .pagination-info > .prev_info {
     color: deepskyblue !important;
 }
 
