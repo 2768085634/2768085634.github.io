@@ -316,3 +316,8 @@ hr:before {
 .reward-button:hover {
     background: pink !important;
 }
+
+/* 时钟字体 */
+#card-clock-time {
+    color: pink !important ;
+}
