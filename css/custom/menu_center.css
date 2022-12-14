@@ -372,6 +372,7 @@ hr {
 
 /* 文章展示页初始化 */
 .recent-post-item {
+    transition: 0.5s !important;
     transform: translateY(100px);
 }
 

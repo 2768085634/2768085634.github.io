@@ -159,12 +159,19 @@ window.addEventListener('scroll', function () {
     let showup = document.getElementsByClassName("recent-post-item")
     for (let i = 0; i < showup.length; i++) {
         let item = showup[i];
-        if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
+        if (item.offsetTop < window.pageYOffset - 180) {
+            item.style.transform = "translateY(-100px)";
+            item.style.opacity = "0";
+            item.style.filter = "blur(20px)";
+        }
+        else if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
             item.style.transform = "translateY(0px)";
             item.style.opacity = "1";
+            item.style.filter = "blur(0px)";
         } else {
             item.style.transform = "translateY(100px)";
             item.style.opacity = "0";
+            item.style.filter = "blur(20px)";
         }
     }
 })
