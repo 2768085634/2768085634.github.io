@@ -333,6 +333,9 @@ hr:before {
 }
 
 /* 分类中鼠标移入某个分类 */
+.article-sort-title:hover::before,
+.year:before,
+.article-sort-item:hover::before,
 .category-list-item:hover::before {
     border: 0.215em solid pink !important;
 }
