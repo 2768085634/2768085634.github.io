@@ -17,6 +17,7 @@
 #aside-content #card-toc .toc-content {
     margin: 10px -18px;
 }
+
 #aside-content #card-toc .toc-content .toc-link.active {
     line-height: 1.2;
     border-radius: 12px;
@@ -26,13 +27,16 @@
     font-weight: bold;
     font-size: 20px;
 }
+
 [data-theme=dark].toc .toc-item.active .toc-link .toc-text {
     color: var(--heo-white);
 }
+
 #aside-content #card-toc .toc-content .toc-item.active .toc-link {
     opacity: 1;
     border-radius: 8px;
 }
+
 #aside-content #card-toc .toc-content .toc-link {
     line-height: 1.2;
     padding: 8px;
@@ -41,16 +45,19 @@
     color: var(--heo-secondtext);
     cursor: default;
 }
+
 #aside-content #card-toc .toc-content .toc-link:not(.active) span {
     opacity: 0.6;
     cursor: pointer;
     filter: blur(1px);
     transition: 0.3s;
 }
+
 #aside-content #card-toc:hover .toc-content .toc-link:not(.active) span {
     filter: blur(0px);
     opacity: 1;
 }
+
 #aside-content #card-toc .toc-content .toc-link:not(.active) span:hover {
     color: var(--heo-lighttext);
 }
@@ -59,6 +66,7 @@
 #aside-content #card-toc .toc-content {
     margin: 10px -18px;
 }
+
 #aside-content #card-toc .toc-content .toc-link.active {
     line-height: 1.2;
     border-radius: 12px;
@@ -68,13 +76,16 @@
     font-weight: bold;
     font-size: 20px;
 }
+
 [data-theme=dark].toc .toc-item.active .toc-link .toc-text {
     color: var(--heo-white);
 }
+
 #aside-content #card-toc .toc-content .toc-item.active .toc-link {
     opacity: 1;
     border-radius: 8px;
 }
+
 #aside-content #card-toc .toc-content .toc-link {
     line-height: 1.2;
     padding: 8px;
@@ -83,16 +94,19 @@
     color: var(--heo-secondtext);
     cursor: default;
 }
+
 #aside-content #card-toc .toc-content .toc-link:not(.active) span {
     opacity: 0.6;
     cursor: pointer;
     filter: blur(1px);
     transition: 0.3s;
 }
+
 #aside-content #card-toc:hover .toc-content .toc-link:not(.active) span {
     filter: blur(0px);
     opacity: 1;
 }
+
 #aside-content #card-toc .toc-content .toc-link:not(.active) span:hover {
     color: var(--heo-lighttext);
 }
@@ -114,7 +128,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #49b1f5;
+    /*background-color: #49b1f5;*/
+    background-color: pink;
     background-image: -webkit-linear-gradient(
             45deg,
             rgba(255, 255, 255, 0.4) 25%,
@@ -141,7 +156,7 @@
 #page,
 #archive,
 #post,
-#recent-posts>.recent-post-item,.layout_page>div:first-child:not(.recent-posts),.layout_post>#page,.layout_post>#post,.read-mode .layout_post>#post {
+#recent-posts > .recent-post-item, .layout_page > div:first-child:not(.recent-posts), .layout_post > #page, .layout_post > #post, .read-mode .layout_post > #post {
     /*background: var(--light_bg_color)*/
     opacity: 0.9;
 }
@@ -154,7 +169,7 @@
 
 /* 主页顶部图 */
 #page-header:not(.not-top-img):before {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
 }
 
 /* 主页顶部导航栏文字 */
@@ -175,7 +190,7 @@
 }
 
 /* 页脚透明 */
-#footer{
+#footer {
     background: transparent !important;
 }
 
@@ -217,7 +232,7 @@ hr:before {
 /* 单选文章切换(没有上/下篇文章) */
 .pull-full > a {
     border-radius: 10px !important;
-    background:black !important;
+    background: black !important;
 }
 
 /* 上下切换文章 */
@@ -228,7 +243,7 @@ hr:before {
 /* 上切换文章 */
 .pull-left > a {
     /* border-radius: 10px !important; */
-    background:black !important;
+    background: black !important;
     /* box-sizing: border-box !important;
     border: 3px solid deepskyblue !important; */
 }
@@ -236,18 +251,18 @@ hr:before {
 /* 下切换文章 */
 .pull-right > a {
     /* border-radius: 10px !important; */
-    background:black !important;
+    background: black !important;
     /* box-sizing: border-box !important;
     border: 3px solid pink !important; */
 }
 
 /* 文章上切换 */
-.pull-left > a > .pagination-info >.label {
+.pull-left > a > .pagination-info > .label {
     color: deepskyblue !important;
 }
 
 /* 文章下切换 */
-.pull-right > a > .pagination-info >.label {
+.pull-right > a > .pagination-info > .label {
     color: pink !important;
 }
 
@@ -263,7 +278,7 @@ hr:before {
 
 /* 切换上下文章背景色 */
 #pagination {
-    background:rgba(0, 0, 0, 0) !important;
+    background: rgba(0, 0, 0, 0) !important;
 }
 
 /* 侧边功能(设置/评论区/回到顶部) */
@@ -324,7 +339,7 @@ hr:before {
 
 /* 时钟字体 */
 #card-clock-time {
-    color: pink !important ;
+    color: pink !important;
 }
 
 /* 磁贴鼠标移入图片过渡效果 */
@@ -356,7 +371,7 @@ hr {
 }
 
 /* 评论区跳转官网按钮不显示 */
-.vrow > .vcol > a{
+.vrow > .vcol > a {
     display: none !important;
 }
 
@@ -384,4 +399,13 @@ hr {
 /* 文章页面目录与作者信息上下间隔距离 */
 #card-toc {
     margin-top: 10px !important;
+}
+
+/* 鼠标移入相册时相册名变色 */
+.gallery-group > figcaption > .gallery-group-name {
+    transition: 0.2s;
+}
+
+.gallery-group:hover > figcaption > .gallery-group-name {
+    color: pink !important;
 }
