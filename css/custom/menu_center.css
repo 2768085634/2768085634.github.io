@@ -220,20 +220,25 @@ hr:before {
     background:black !important;
 }
 
-/* 下切换文章 */
+/* 上下切换文章 */
+#pagination {
+    border-radius: 20px;
+}
+
+/* 上切换文章 */
 .pull-left > a {
-    border-radius: 10px !important;
+    /* border-radius: 10px !important; */
     background:black !important;
-    box-sizing: border-box !important;
-    border: 3px solid deepskyblue !important;
+    /* box-sizing: border-box !important;
+    border: 3px solid deepskyblue !important; */
 }
 
 /* 下切换文章 */
 .pull-right > a {
-    border-radius: 10px !important;
+    /* border-radius: 10px !important; */
     background:black !important;
-    box-sizing: border-box !important;
-    border: 3px solid pink !important;
+    /* box-sizing: border-box !important;
+    border: 3px solid pink !important; */
 }
 
 /* 文章上切换 */
@@ -353,4 +358,29 @@ hr {
 /* 评论区跳转官网按钮不显示 */
 .vrow > .vcol > a{
     display: none !important;
+}
+
+/* 评论下方"快来发表评论吧~"颜色更改 */
+.vempty {
+    color: pink !important;
+}
+
+/* 评论区底部Powered By Valine去掉 */
+.vpower {
+    display: none !important;
+}
+
+/* 文章展示页初始化 */
+.recent-post-item {
+    transform: translateY(100px);
+}
+
+/* 首页箭头颜色更改 */
+.scroll-down-effects::before {
+    color: pink;
+}
+
+/* 文章页面目录与作者信息上下间隔距离 */
+#card-toc {
+    margin-top: 10px !important;
 }

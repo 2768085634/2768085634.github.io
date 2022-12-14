@@ -9,6 +9,7 @@ function Sakura(x, y, s, r, fn) {
     this.r = r;
     this.fn = fn;
 }
+
 Sakura.prototype.draw = function (cxt) {
     cxt.save();
     var xc = 40 * this.s / 4;
@@ -132,6 +133,7 @@ function startSakura() {
         stop = requestAnimationFrame(arguments.callee);
     })
 }
+
 window.onresize = function () {
     var canvasSnow = document.getElementById('canvas_snow');
 }
@@ -149,3 +151,20 @@ function stopp() {
         startSakura();
     }
 }
+
+// 动画
+
+
+window.addEventListener('scroll', function () {
+    let showup = document.getElementsByClassName("recent-post-item")
+    for (let i = 0; i < showup.length; i++) {
+        let item = showup[i];
+        if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
+            item.style.transform = "translateY(0px)";
+            item.style.opacity = "1";
+        } else {
+            item.style.transform = "translateY(100px)";
+            item.style.opacity = "0";
+        }
+    }
+})
