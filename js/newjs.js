@@ -153,25 +153,75 @@ function stopp() {
 }
 
 // 动画
+var attribute = [
+    {
+        className: "recent-post-item", // class名称,支持多个class,用逗号(英文)隔开
+        move: 100,                     // 移动距离,如果direction为col,move>0为从上到下,小于0为从下到上,如果direction为row,move>0为从右到左,move<0为从左到右
+        direction: "col",              // col或者row
+        opacity: 0.9,                  // 完全显示出来时的透明度
+        filter: 20,                    // 动画初始状态的模糊度
+        flag: true                     // 是否加入消失动画(不建议direction为col时使用)
+    },
+    {
+        className: "aside-content",
+        move: -100,
+        direction: "row",
+        opacity: 0.9,
+        filter: 20,
+        flag: false
+    }
+]
 
-
-window.addEventListener('scroll', function () {
-    let showup = document.getElementsByClassName("recent-post-item")
-    for (let i = 0; i < showup.length; i++) {
-        let item = showup[i];
-        if (item.offsetTop < window.pageYOffset - 180) {
-            item.style.transform = "translateY(-100px)";
-            item.style.opacity = "0";
-            item.style.filter = "blur(20px)";
-        }
-        else if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
-            item.style.transform = "translateY(0px)";
-            item.style.opacity = "1";
-            item.style.filter = "blur(0px)";
-        } else {
-            item.style.transform = "translateY(100px)";
-            item.style.opacity = "0";
-            item.style.filter = "blur(20px)";
+window.onload = function () {
+    for (let i = 0; i < attribute.length; i++) {
+        let classNameList = attribute[i].className.split(',');
+        for (let j = 0; j < classNameList.length; j++) {
+            let event = document.getElementsByClassName(classNameList[j]);
+            for (let k = 0; k < event.length; k++) {
+                let item = event[k];
+                if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
+                    item.style.transform = "none";
+                }
+            }
         }
     }
+}
+
+window.addEventListener('scroll', function () {
+    for (let i = 0; i < attribute.length; i++) {
+        let att = attribute[i];
+        show(att.className, att.move, att.direction, att.opacity, att.filter, att.flag);
+    }
 })
+
+function show(className, move, direction = "col", opacity = 1, filter = 0, flag = false) {
+    let classNameList = className.split(',');
+    for (let i = 0; i < classNameList.length; i++) {
+        name = classNameList[i];
+        let event = document.getElementsByClassName(name);
+        for (let j = 0; j < event.length; j++) {
+            let item = event[j];
+            if (item.offsetTop < window.pageYOffset - 180 && flag) {
+                show_anime(item, direction, -1 * move, 0, filter)
+            } else if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
+                show_anime(item, direction, 0, opacity, 0)
+            } else {
+                show_anime(item, direction, move, 0, filter)
+            }
+        }
+    }
+}
+
+function show_anime(event, direction, move, opacity, filter) {
+    let d;
+    if (direction === "col") {
+        d = "Y";
+    } else if (direction === "row") {
+        d = "X";
+    } else {
+        return;
+    }
+    event.style.transform = "translate" + d + "(" + move + "px)";
+    event.style.opacity = opacity;
+    event.style.filter = "blur(" + filter + "px)";
+}

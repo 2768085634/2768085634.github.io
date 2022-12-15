@@ -162,7 +162,7 @@
 }
 
 /* 侧边栏透明 */
-#aside-content .card-widget {
+#aside-content {
     /*background: var(--light_bg_color)*/
     opacity: 0.9;
 }
@@ -389,6 +389,12 @@ hr {
 .recent-post-item {
     transition: 0.5s !important;
     transform: translateY(100px);
+}
+
+/* 侧边栏 */
+.aside-content {
+    transition: 0.5s !important;
+    transform: translateX(-100px);
 }
 
 /* 首页箭头颜色更改 */
