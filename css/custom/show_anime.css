@@ -1,14 +1,14 @@
-/* 文章展示页初始化 */
-.recent-post-item {
-    transition: 0.5s !important;
-}
+/*!* 文章展示页初始化 *!*/
+/*.recent-post-item {*/
+/*    transition: 0.5s !important;*/
+/*}*/
 
-/* 侧边栏初始化 */
-.aside-content {
-    transition: 0.5s !important;
-}
+/*!* 侧边栏初始化 *!*/
+/*.aside-content {*/
+/*    transition: 0.5s !important;*/
+/*}*/
 
-/* 相册初始化 */
-.gallery-group {
-    transition: 0.5s !important;
-}
+/*!* 相册初始化 *!*/
+/*.gallery-group {*/
+/*    transition: 0.5s !important;*/
+/*}*/
