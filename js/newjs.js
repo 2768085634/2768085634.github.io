@@ -152,67 +152,34 @@ function stopp() {
     }
 }
 
-// 动画
-var attribute = [
+// 渐入渐出效果
+var attributes = [
     {
-        className: "recent-post-item", // class名称,支持多个class,用逗号(英文)隔开
-        move: 100,                     // 移动距离,如果direction为col,move>0为从上到下,小于0为从下到上,如果direction为row,move>0为从右到左,move<0为从左到右
-        direction: "col",              // col或者row
-        opacity: 0.9,                  // 完全显示出来时的透明度
-        filter: 20,                    // 动画初始状态的模糊度
-        flag: true                     // 是否加入消失动画(不建议direction为col时使用)
+        idNames: null,                     // id名称,支持多个id,用逗号(英文)隔开,若为空则填null
+        classNames: "recent-post-item",    // class名称,支持多个class,用逗号(英文)隔开,若为空则填null
+        atts: {                            // 想要定义的属性合
+            move: 100,                     // 移动距离,如果direction为col,move>0为从上到下,小于0为从下到上,如果direction为row,move>0为从右到左,move<0为从左到右
+            direction: "col",              // col或者row
+            opacity: 0.9,                  // 完全显示出来时的透明度
+            filter: 20,                    // 动画初始状态的模糊度
+            flag: true                     // 是否加入消失动画(不建议direction为col时使用)
+        }
     },
     {
-        className: "aside-content",
-        move: -100,
-        direction: "row",
-        opacity: 0.9,
-        filter: 20,
-        flag: false
+        idNames: null,
+        classNames: "aside-content",
+        atts: {
+            move: -100,
+            direction: "row",
+            opacity: 0.9,
+            filter: 20,
+            flag: false
+        }
     }
 ]
 
-window.onload = function () {
-    for (let i = 0; i < attribute.length; i++) {
-        let classNameList = attribute[i].className.split(',');
-        for (let j = 0; j < classNameList.length; j++) {
-            let event = document.getElementsByClassName(classNameList[j]);
-            for (let k = 0; k < event.length; k++) {
-                let item = event[k];
-                if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
-                    item.style.transform = "none";
-                }
-            }
-        }
-    }
-}
-
-window.addEventListener('scroll', function () {
-    for (let i = 0; i < attribute.length; i++) {
-        let att = attribute[i];
-        show(att.className, att.move, att.direction, att.opacity, att.filter, att.flag);
-    }
-})
-
-function show(className, move, direction = "col", opacity = 1, filter = 0, flag = false) {
-    let classNameList = className.split(',');
-    for (let i = 0; i < classNameList.length; i++) {
-        name = classNameList[i];
-        let event = document.getElementsByClassName(name);
-        for (let j = 0; j < event.length; j++) {
-            let item = event[j];
-            if (item.offsetTop < window.pageYOffset - 180 && flag) {
-                show_anime(item, direction, -1 * move, 0, filter)
-            } else if (item.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
-                show_anime(item, direction, 0, opacity, 0)
-            } else {
-                show_anime(item, direction, move, 0, filter)
-            }
-        }
-    }
-}
-
-function show_anime(event, direction, move, opacity, filter) {
+// 渐入渐出效果-添加效果
+function show_anime(event, direction = "col", move = 0, opacity = 1, filter = 0) {
     let d;
     if (direction === "col") {
         d = "Y";
@@ -225,3 +192,66 @@ function show_anime(event, direction, move, opacity, filter) {
     event.style.opacity = opacity;
     event.style.filter = "blur(" + filter + "px)";
 }
+
+// 渐入渐出效果-动画判定
+function showAnimeRun(event, att) {
+    if (event.offsetTop < window.pageYOffset - 180 && att.flag) {
+        show_anime(event, att.direction, -1 * att.move, 0, att.filter)
+    } else if (event.offsetTop < window.pageYOffset + document.documentElement.clientHeight - 150) {
+        show_anime(event, att.direction, 0, att.opacity, 0)
+    } else {
+        show_anime(event, att.direction, att.move, 0, att.filter)
+    }
+}
+
+// 渐入渐出效果-为单个id添加效果
+function showAnimeByOneIdName(idName, att) {
+    try {
+        showAnimeRun(document.getElementById(idName), att);
+    } catch (e) {
+        console.log("can not find this id: " + idName);
+    }
+}
+
+// 渐入渐出效果-为多个id添加效果
+function showAnimeByListIdName(idNames, att) {
+    if (idNames === null) {
+        return;
+    }
+    let idNameList = idNames.split(',');
+    for (let i = 0; i < idNameList.length; i++) {
+        showAnimeByOneIdName(idNameList[i], att);
+    }
+}
+
+// 渐入渐出效果-为单个class添加效果
+function showAnimeByOneClassName(className, att) {
+    try {
+        let events = document.getElementsByClassName(className);
+        for (let i = 0; i < events.length; i++) {
+            showAnimeRun(events[i], att);
+        }
+    } catch (e) {
+        console.log("can not find this class: " + className);
+    }
+}
+
+// 渐入渐出效果-为多个class添加效果
+function showAnimeByListClassName(classNames, att) {
+    if (classNames === null) {
+        return;
+    }
+    let classNameList = classNames.split(',');
+    for (let i = 0; i < classNameList.length; i++) {
+        showAnimeByOneClassName(classNameList[i], att);
+    }
+}
+
+// 渐入渐出效果-滚动触发动画
+window.addEventListener('scroll', function () {
+    for (let i = 0; i < attributes.length; i++) {
+        let Atts = attributes[i];
+        showAnimeByListIdName(Atts.idNames, Atts.atts);
+        showAnimeByListClassName(Atts.classNames, Atts.atts);
+    }
+})
