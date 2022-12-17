@@ -159,25 +159,27 @@ var attributes = [
         classNames: "recent-post-item",    // class名称,支持多个class,用逗号(英文)隔开,若为空则填null
         time: 0.5,                         // 动画时长
         atts: {                            // 想要定义的属性合
-            move: 100,                     // 移动距离,如果direction为col,move>0为从上到下,小于0为从下到上,如果direction为row,move>0为从右到左,move<0为从左到右
+            moveIn: 100,                   // 移入距离,如果direction为col,move>0为从上到下,小于0为从下到上,如果direction为row,move>0为从右到左,move<0为从左到右
+            moveOut: 100,                  // 移出距离,跟上面相反
             direction: "col",              // col或者row
             opacity: 0.9,                  // 完全显示出来时的透明度
             filter: 20,                    // 动画初始状态的模糊度
-            flag: true,                    // 是否加入消失动画(不建议direction为col时使用)
+            flag: true,                    // 是否加入消失动画
             hid: 180,                      // 元素顶部超出页面最上端多少距离时执行动画
-            show: 150                      // 元素底部超出页面最下端多少距离时执行动画
+            show: 100                      // 元素底部超出页面最下端多少距离时执行动画
         },
     },
     {
         idNames: null,
-        classNames: "aside-content",
+        classNames: "card-widget",
         time: 0.5,
         atts: {
-            move: -100,
+            moveIn: -100,
+            moveOut: 100,
             direction: "row",
             opacity: 0.9,
             filter: 20,
-            flag: false,
+            flag: true,
             hid: 180,
             show: 150
         }
@@ -187,13 +189,14 @@ var attributes = [
         classNames: "category-list-item,article-sort-item",
         time: 0.5,
         atts: {
-            move: 50,
+            moveIn: 50,
+            moveOut: 50,
             direction: "col",
             opacity: 1,
             filter: 20,
             flag: true,
-            hid: -40,
-            show: 10
+            hid: -10,
+            show: 0
         }
     }
 ]
@@ -269,11 +272,11 @@ function show_anime(event, direction = "col", move = 0, opacity = 1, filter = 0)
 // 渐入渐出效果-动画判定
 function showAnimeRun(event, att) {
     if (event.offsetTop < window.pageYOffset - att.hid && att.flag) {
-        show_anime(event, att.direction, -1 * att.move, 0, att.filter)
+        show_anime(event, att.direction, -1 * att.moveOut, 0, att.filter)
     } else if (event.offsetTop < window.pageYOffset + document.documentElement.clientHeight - att.show) {
         show_anime(event, att.direction, 0, att.opacity, 0)
     } else {
-        show_anime(event, att.direction, att.move, 0, att.filter)
+        show_anime(event, att.direction, att.moveIn, 0, att.filter)
     }
 }
 
