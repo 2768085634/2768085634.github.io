@@ -165,13 +165,14 @@ var attributes = [
             opacity: 0.9,                  // 完全显示出来时的透明度
             filter: 20,                    // 动画初始状态的模糊度
             flag: true,                    // 是否加入消失动画
+            percent: false,                // 如果打开则hid和show为百分比
             hid: 180,                      // 元素顶部超出页面最上端多少距离时执行动画
             show: 100                      // 元素底部超出页面最下端多少距离时执行动画
         },
     },
     {
         idNames: null,
-        classNames: "card-widget",
+        classNames: "aside-content",
         time: 0.5,
         atts: {
             moveIn: -100,
@@ -179,7 +180,8 @@ var attributes = [
             direction: "row",
             opacity: 0.9,
             filter: 20,
-            flag: true,
+            flag: false,
+            percent: false,
             hid: 180,
             show: 150
         }
@@ -195,6 +197,7 @@ var attributes = [
             opacity: 1,
             filter: 20,
             flag: true,
+            percent: false,
             hid: -10,
             show: 0
         }
@@ -271,6 +274,11 @@ function show_anime(event, direction = "col", move = 0, opacity = 1, filter = 0)
 
 // 渐入渐出效果-动画判定
 function showAnimeRun(event, att) {
+    if (att.percent) {
+        att.hid = event.offsetHeight * att.hid / 100;
+        att.show = event.offsetHeight * att.hid / 100;
+        att.percent = false;
+    }
     if (event.offsetTop < window.pageYOffset - att.hid && att.flag) {
         show_anime(event, att.direction, -1 * att.moveOut, 0, att.filter)
     } else if (event.offsetTop < window.pageYOffset + document.documentElement.clientHeight - att.show) {
