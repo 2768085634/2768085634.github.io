@@ -183,6 +183,10 @@
     color: black !important;
 }
 
+/*#site-title:hover {*/
+/*    text-shadow: pink 5px 0 0, pink -5px 0 0, pink 0 5px 0, pink 0 -5px 0 !important;*/
+/*}*/
+
 /* 主页展示语 */
 #site-subtitle {
     color: deepskyblue !important;
